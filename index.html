@@ -17,7 +17,7 @@ header,section{padding:60px 0}
 section{border-top:1px solid var(--line)}
 h1{font-size:clamp(2.35rem,6vw,4.3rem);line-height:1.05;margin:0 0 18px}
 h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 14px}
-h3{margin-top:0}
+h3{margin:0 0 8px}
 p{color:var(--muted)}
 .eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:14px 0}
@@ -48,8 +48,40 @@ textarea{min-height:120px;resize:vertical}
 .after{margin-top:18px;color:var(--ok);font-weight:700}
 .small{font-size:.92rem;color:var(--muted)}
 
+/* PROCESO */
+.process{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:24px
+}
+.step{
+  position:relative;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px;
+  min-height:180px
+}
+.step-num{
+  width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--accent);color:#111;font-weight:700;
+  margin-bottom:14px
+}
+.client-box{
+  margin-top:22px;
+  padding:18px 20px;
+  border:1px solid var(--line);
+  background:#121b24;
+  border-radius:12px
+}
+
+@media(max-width:900px){
+  .process{grid-template-columns:1fr 1fr}
+}
 @media(max-width:760px){
-  .grid,.demo-grid{grid-template-columns:1fr}
+  .grid,.demo-grid,.process{grid-template-columns:1fr}
   header,section{padding:48px 0}
 }
 </style>
@@ -98,10 +130,10 @@ textarea{min-height:120px;resize:vertical}
       <div class="demo-grid">
         <div>
           <label for="negocio">Tipo de negocio</label>
-          <input id="negocio" value="Panadería artesanal" />
+          <input id="negocio" value="Panadería artesanal">
 
           <label for="oferta">¿Qué quieres promocionar?</label>
-          <input id="oferta" value="Pan de masa madre recién horneado" />
+          <input id="oferta" value="Pan de masa madre recién horneado">
 
           <label for="formato">Formato</label>
           <select id="formato">
@@ -140,17 +172,60 @@ textarea{min-height:120px;resize:vertical}
   </div>
 </section>
 
-<section>
+<section id="proceso">
   <div class="wrap">
     <h2>Cómo trabajo</h2>
-    <div class="card"><p>Primero entiendo qué quieres comunicar, a quién quieres llegar y qué material ya tienes. Después definimos la pieza, preparo una primera propuesta, revisamos el resultado y hacemos los ajustes acordados.</p></div>
+    <p>Primero ves una demo y entiendes qué se puede hacer. Si tiene sentido para tu negocio, seguimos este camino:</p>
+
+    <div class="process">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Reunión de 20 minutos</h3>
+        <p>Entiendo qué quieres comunicar, a quién quieres llegar y cuál es el problema concreto que necesitas resolver.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Demo adaptada a tu negocio</h3>
+        <p>Te muestro una versión aplicada a tu caso. La ves antes de hablar de inversión.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Alcance por escrito</h3>
+        <p>Definimos qué incluye el trabajo, qué no incluye, qué necesito de ti y qué vas a recibir.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Construcción</h3>
+        <p>Desarrollo el proyecto en el plazo acordado. Según el alcance, puede ser de 7, 14 o 30 días.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">5</div>
+        <h3>Entrega y ajuste</h3>
+        <p>Recibes el material acordado, revisamos juntos el resultado y hacemos un ajuste final si hace falta.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">6</div>
+        <h3>Qué sigue después</h3>
+        <p>Definimos si el trabajo termina ahí o si conviene continuar con nuevas piezas, adaptaciones o acompañamiento.</p>
+      </div>
+    </div>
+
+    <div class="client-box">
+      <strong>¿Qué necesitas poner tú?</strong>
+      <p>La información o accesos necesarios para trabajar y, cuando el proyecto lo requiera, una reunión semanal breve para revisar avances.</p>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>Cómo armo un presupuesto</h2>
-    <div class="card"><p>El presupuesto depende del tipo de pieza, cantidad de contenidos, formatos, canales y materiales disponibles. Primero vemos tu necesidad y, si tiene sentido trabajar juntos, definimos alcance y presupuesto en una conversación de 20 minutos.</p></div>
+    <div class="card"><p>El presupuesto depende del tipo de pieza, cantidad de contenidos, formatos, canales y materiales disponibles. Primero ves la demo y revisamos tu necesidad. El número se conversa en la reunión 1:1, una vez que el alcance está claro.</p></div>
   </div>
 </section>
 
