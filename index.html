@@ -13,10 +13,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);
-  line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{width:min(92%,1100px);margin:auto}
 header,section{padding:60px 0}
 section{border-top:1px solid var(--line)}
@@ -28,48 +25,28 @@ p{color:var(--muted)}
 .card,.demo-shell,.step,.client-box,details{box-shadow:var(--shadow)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:14px 0}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.cta{
-  display:inline-flex;align-items:center;justify-content:center;min-height:46px;
-  background:var(--accent);color:#111;text-decoration:none;font-weight:700;
-  padding:14px 20px;border-radius:10px;border:0;cursor:pointer
-}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;background:var(--accent);color:#111;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:10px;border:0;cursor:pointer}
 .cta.secondary{background:#24313d;color:var(--text);border:1px solid var(--line)}
 ul{padding-left:22px}
 li{margin:10px 0;color:#d7dde3}
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 summary{cursor:pointer;font-weight:700}
-
-/* DEMO */
 .demo-shell{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:24px}
 .demo-note{padding:14px 16px;border-left:4px solid var(--accent);background:#121b24;border-radius:8px;margin-bottom:22px}
 .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 label{display:block;font-weight:700;margin:0 0 7px}
-input,select,textarea{
-  width:100%;background:#0f1720;color:var(--text);border:1px solid #3a4b5a;
-  border-radius:9px;padding:12px 13px;font:inherit;margin-bottom:14px
-}
+input,select,textarea{width:100%;background:#0f1720;color:var(--text);border:1px solid #3a4b5a;border-radius:9px;padding:12px 13px;font:inherit;margin-bottom:14px}
 textarea{min-height:120px;resize:vertical}
-.output{
-  min-height:250px;background:#0d151d;border:1px dashed #4a5d6e;border-radius:12px;
-  padding:18px;white-space:pre-wrap;color:#e9eef2
-}
+.output{min-height:250px;background:#0d151d;border:1px dashed #4a5d6e;border-radius:12px;padding:18px;white-space:pre-wrap;color:#e9eef2}
 .output.empty{color:#84919d}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 .after{margin-top:18px;color:var(--ok);font-weight:700}
 .small{font-size:.92rem;color:var(--muted)}
-
-/* PROCESO */
 .process{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 .step{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;min-height:180px}
-.step-num{
-  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
-  background:var(--accent);color:#111;font-weight:700;margin-bottom:14px
-}
+.step-num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#111;font-weight:700;margin-bottom:14px}
 .client-box{margin-top:22px;padding:18px 20px;border:1px solid var(--line);background:#121b24;border-radius:12px}
-
-@media(max-width:900px){
-  .process{grid-template-columns:1fr 1fr}
-}
+@media(max-width:900px){.process{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){
   .wrap{width:100%;padding-left:18px;padding-right:18px}
   header{padding:34px 0 38px}
@@ -83,8 +60,6 @@ textarea{min-height:120px;resize:vertical}
   input,select,textarea{font-size:16px}
   .output{min-height:190px}
   .actions{flex-direction:column}
-  .actions .cta{width:100%}
-  details{font-size:1rem}
 }
 </style>
 </head>
@@ -127,40 +102,49 @@ textarea{min-height:120px;resize:vertical}
   <div class="wrap">
     <h2>Demo: de una idea suelta a un texto listo para publicar</h2>
     <p class="demo-note"><strong>Antes:</strong> tienes algo que vender o comunicar, pero no sabes cómo convertirlo en un texto claro para redes.</p>
+
     <div class="demo-shell">
       <div class="demo-grid">
         <div>
           <label for="negocio">Tipo de negocio</label>
           <input id="negocio" value="Panadería artesanal">
+
           <label for="oferta">¿Qué quieres promocionar?</label>
           <input id="oferta" value="Pan de masa madre recién horneado">
+
           <label for="formato">Formato</label>
           <select id="formato">
             <option value="instagram">Post de Instagram</option>
             <option value="reel">Guion corto para Reel</option>
             <option value="whatsapp">Mensaje de WhatsApp</option>
           </select>
+
           <label for="tono">Tono</label>
           <select id="tono">
             <option value="cercano">Cercano</option>
             <option value="directo">Directo</option>
             <option value="profesional">Profesional</option>
           </select>
+
           <label for="detalle">Dato útil o diferencial</label>
           <textarea id="detalle">Hecho con fermentación lenta de 24 horas y entregas en el barrio durante la tarde.</textarea>
+
           <button class="cta" onclick="generarTexto()">Generar ejemplo</button>
         </div>
+
         <div>
           <label>Resultado</label>
           <div id="resultado" class="output empty">Completa los campos y presiona “Generar ejemplo”.</div>
           <div class="actions">
             <button class="cta secondary" onclick="copiarTexto()">Copiar texto</button>
-            <button class="cta secondary" onclick="limpiarDemo()">Limpiar</button>
+            <button class="cta secondary" onclick="reiniciarDemo()">Reiniciar demo</button>
+            <button class="cta secondary" onclick="recargarPagina()">Recargar página</button>
           </div>
           <p class="small">Esta demo corre completamente en el navegador. No usa API keys ni envía información a un servidor.</p>
         </div>
       </div>
     </div>
+
     <p class="after"><strong>Después:</strong> tienes una base concreta, clara y editable para publicar o convertir en una pieza audiovisual.</p>
     <a class="cta" href="#contacto">¿Lo ves claro? Agenda 20 minutos y te armo la versión para tu negocio.</a>
   </div>
@@ -221,41 +205,87 @@ textarea{min-height:120px;resize:vertical}
 </section>
 
 <script>
+const defaults = {
+  negocio: 'Panadería artesanal',
+  oferta: 'Pan de masa madre recién horneado',
+  detalle: 'Hecho con fermentación lenta de 24 horas y entregas en el barrio durante la tarde.'
+};
+
+function pasarATu(texto){
+  return texto
+    .replace(/\bmis\b/gi, 'tus')
+    .replace(/\bmi\b/gi, 'tu')
+    .replace(/\bnuestro\b/gi, 'tu')
+    .replace(/\bnuestros\b/gi, 'tus');
+}
+
 function generarTexto(){
-  const negocio=document.getElementById('negocio').value.trim()||'tu negocio';
-  const oferta=document.getElementById('oferta').value.trim()||'tu producto o servicio';
-  const formato=document.getElementById('formato').value;
-  const tono=document.getElementById('tono').value;
-  const detalle=document.getElementById('detalle').value.trim();
-  const aperturas={
-    cercano:`Hoy en ${negocio} tenemos algo que vale la pena probar:`,
-    directo:`Si buscas una opción clara y sin vueltas, mira esto:`,
-    profesional:`${negocio} presenta una opción pensada para quienes valoran calidad y claridad:`
-  };
-  let cuerpo='';
-  if(formato==='instagram'){
-    cuerpo=`${aperturas[tono]} ${oferta}.\n\n${detalle?detalle+'\n\n':''}Si te interesa, escríbenos y te contamos disponibilidad.`;
-  }else if(formato==='reel'){
-    cuerpo=`GANCHO: ¿Todavía no has probado ${oferta.toLowerCase()}?\n\nDESARROLLO: En ${negocio} preparamos ${oferta.toLowerCase()}. ${detalle}\n\nCTA: Escríbenos y te contamos cómo pedirlo.`;
-  }else{
-    cuerpo=`Hola 👋 Somos ${negocio}. Hoy tenemos disponible ${oferta}. ${detalle}\n\nSi quieres, te confirmamos disponibilidad y te explicamos cómo pedirlo.`;
+  const negocio = document.getElementById('negocio').value.trim() || 'tu negocio';
+  const ofertaOriginal = document.getElementById('oferta').value.trim() || 'tu producto o servicio';
+  const oferta = pasarATu(ofertaOriginal);
+  const formato = document.getElementById('formato').value;
+  const tono = document.getElementById('tono').value;
+  const detalle = document.getElementById('detalle').value.trim();
+
+  let cuerpo = '';
+
+  if(formato === 'reel'){
+    cuerpo =
+`GANCHO: ¿Quieres ${oferta} de una forma más clara?
+
+DESARROLLO: ${detalle || `En ${negocio} tienes algo que vale la pena mostrar mejor.`}
+
+CTA: Escríbenos y te contamos cómo convertirlo en una pieza lista para publicar.`;
+  } else if(formato === 'instagram'){
+    const apertura = tono === 'directo'
+      ? `¿Quieres ${oferta} sin darle tantas vueltas?`
+      : tono === 'profesional'
+      ? `Una forma más clara de ${oferta}.`
+      : `¿Quieres ${oferta} y no sabes por dónde empezar?`;
+
+    cuerpo =
+`${apertura}
+
+${detalle || `En ${negocio} tienes una idea que puede convertirse en contenido claro y útil.`}
+
+Si te interesa, escríbenos y te contamos cómo hacerlo.`;
+  } else {
+    cuerpo =
+`Hola 👋
+
+¿Quieres ${oferta} de una forma más clara?
+
+${detalle || `Podemos ayudarte a convertir esa idea en contenido listo para usar.`}
+
+Si quieres, te contamos cómo hacerlo.`;
   }
-  const out=document.getElementById('resultado');
-  out.textContent=cuerpo;out.classList.remove('empty');
+
+  const out = document.getElementById('resultado');
+  out.textContent = cuerpo;
+  out.classList.remove('empty');
 }
+
 function copiarTexto(){
-  const txt=document.getElementById('resultado').textContent;
-  if(!txt||txt.includes('Completa los campos'))return;
-  navigator.clipboard.writeText(txt).then(()=>alert('Texto copiado.'));
+  const txt = document.getElementById('resultado').textContent;
+  if(!txt || txt.includes('Completa los campos')) return;
+  navigator.clipboard.writeText(txt).then(() => alert('Texto copiado.'));
 }
-function limpiarDemo(){
-  document.getElementById('negocio').value='';
-  document.getElementById('oferta').value='';
-  document.getElementById('detalle').value='';
-  const out=document.getElementById('resultado');
-  out.textContent='Completa los campos y presiona “Generar ejemplo”.';
+
+function reiniciarDemo(){
+  document.getElementById('negocio').value = defaults.negocio;
+  document.getElementById('oferta').value = defaults.oferta;
+  document.getElementById('detalle').value = defaults.detalle;
+  document.getElementById('formato').value = 'instagram';
+  document.getElementById('tono').value = 'cercano';
+  const out = document.getElementById('resultado');
+  out.textContent = 'Completa los campos y presiona “Generar ejemplo”.';
   out.classList.add('empty');
 }
+
+function recargarPagina(){
+  window.location.href = window.location.pathname;
+}
 </script>
+
 </body>
 </html>
