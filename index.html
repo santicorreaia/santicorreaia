@@ -5,31 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Santiago Correa | Comunicación audiovisual con IA</title>
 <style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0f1720;color:#f5f7fa;line-height:1.6}
+:root{
+  --bg:#0f1720; --panel:#17212b; --panel2:#1c2834; --text:#f5f7fa;
+  --muted:#b8c2cc; --accent:#ff8a1f; --line:#2f3d4a; --ok:#9bd3ae;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 .wrap{width:min(92%,1100px);margin:auto}
 header,section{padding:60px 0}
-section{border-top:1px solid #2f3d4a}
+section{border-top:1px solid var(--line)}
 h1{font-size:clamp(2.35rem,6vw,4.3rem);line-height:1.05;margin:0 0 18px}
-h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px}
-p{color:#b8c2cc}
-.eyebrow{color:#ff8a1f;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
-.card{background:#17212b;border:1px solid #2f3d4a;border-radius:14px;padding:22px;margin:14px 0}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 14px}
+h3{margin-top:0}
+p{color:var(--muted)}
+.eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:14px 0}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.cta{display:inline-block;background:#ff8a1f;color:#111;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:10px}
+.cta{display:inline-block;background:var(--accent);color:#111;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:10px;border:0;cursor:pointer}
+.cta.secondary{background:#24313d;color:var(--text);border:1px solid var(--line)}
 ul{padding-left:22px}
 li{margin:10px 0;color:#d7dde3}
-details{background:#17212b;border:1px solid #2f3d4a;border-radius:12px;padding:16px 18px;margin-bottom:12px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 summary{cursor:pointer;font-weight:700}
-@media(max-width:760px){.grid{grid-template-columns:1fr}header,section{padding:48px 0}}
+
+/* DEMO */
+.demo-shell{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:24px}
+.demo-note{padding:14px 16px;border-left:4px solid var(--accent);background:#121b24;border-radius:8px;margin-bottom:22px}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+label{display:block;font-weight:700;margin:0 0 7px}
+input,select,textarea{
+  width:100%;background:#0f1720;color:var(--text);border:1px solid #3a4b5a;
+  border-radius:9px;padding:12px 13px;font:inherit;margin-bottom:14px
+}
+textarea{min-height:120px;resize:vertical}
+.output{
+  min-height:250px;background:#0d151d;border:1px dashed #4a5d6e;border-radius:12px;
+  padding:18px;white-space:pre-wrap;color:#e9eef2
+}
+.output.empty{color:#84919d}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.after{margin-top:18px;color:var(--ok);font-weight:700}
+.small{font-size:.92rem;color:var(--muted)}
+
+@media(max-width:760px){
+  .grid,.demo-grid{grid-template-columns:1fr}
+  header,section{padding:48px 0}
+}
 </style>
 </head>
 <body>
+
 <header>
   <div class="wrap">
     <p class="eyebrow">Comunicación + Inteligencia Artificial</p>
     <h1>Convierto productos, servicios e ideas de emprendedores y pequeñas empresas en contenido audiovisual listo para publicar.</h1>
     <p>Soy Santiago Correa, comunicador social y periodista. Creo imágenes, videos, guiones, voces, avatares y adaptaciones para redes sociales según lo que cada negocio necesite comunicar.</p>
-    <a class="cta" href="#contacto">Agendar una reunión de 20 minutos</a>
+    <a class="cta" href="#demo">Ver demo</a>
   </div>
 </header>
 
@@ -57,38 +89,134 @@ summary{cursor:pointer;font-weight:700}
   </div>
 </section>
 
-<section><div class="wrap">
-<h2>De una idea suelta a una pieza lista para publicar</h2>
-<div class="grid">
-<div class="card"><strong>Antes</strong><p>Tienes un producto, servicio, promoción o idea que quieres comunicar, pero todavía no sabes cómo convertirla en contenido.</p></div>
-<div class="card"><strong>Después</strong><p>Recibes una pieza desarrollada con concepto, guion, imagen o video y, cuando aplica, versiones adaptadas para tus canales.</p></div>
-</div>
-</div></section>
+<section id="demo">
+  <div class="wrap">
+    <h2>Demo: de una idea suelta a un texto listo para publicar</h2>
+    <p class="demo-note"><strong>Antes:</strong> tienes algo que vender o comunicar, pero no sabes cómo convertirlo en un texto claro para redes.</p>
 
-<section><div class="wrap">
-<h2>Cómo trabajo</h2>
-<div class="card"><p>Primero entiendo qué quieres comunicar, a quién quieres llegar y qué material ya tienes. Después definimos la pieza, preparo una primera propuesta, revisamos el resultado y hacemos los ajustes acordados.</p></div>
-</div></section>
+    <div class="demo-shell">
+      <div class="demo-grid">
+        <div>
+          <label for="negocio">Tipo de negocio</label>
+          <input id="negocio" value="Panadería artesanal" />
 
-<section><div class="wrap">
-<h2>Cómo armo un presupuesto</h2>
-<div class="card"><p>El presupuesto depende del tipo de pieza, cantidad de contenidos, formatos, canales y materiales disponibles. Primero vemos tu necesidad y, si tiene sentido trabajar juntos, definimos alcance y presupuesto en una conversación de 20 minutos.</p></div>
-</div></section>
+          <label for="oferta">¿Qué quieres promocionar?</label>
+          <input id="oferta" value="Pan de masa madre recién horneado" />
 
-<section><div class="wrap">
-<h2>Preguntas frecuentes</h2>
-<details><summary>¿Tengo que saber usar inteligencia artificial?</summary><p>No. Yo me encargo de las herramientas y del proceso de producción.</p></details>
-<details><summary>¿Tengo que llegar con una idea completamente definida?</summary><p>No. Podemos comenzar desde un producto, servicio, necesidad o idea que quieras comunicar.</p></details>
-<details><summary>¿Qué tipo de contenido puedes crear?</summary><p>Imágenes, fotografía con IA, videos cortos, videos promocionales o explicativos, guiones, ganchos, CTA, textos, avatares, voces y doblajes con IA.</p></details>
-<details><summary>¿Puedes adaptar un contenido para varias redes?</summary><p>Sí. Una misma idea puede convertirse en versiones para Instagram, TikTok, YouTube, Facebook u otros canales.</p></details>
-<details><summary>¿La inteligencia artificial hace todo?</summary><p>No. La IA es una herramienta. El mensaje, el criterio de comunicación, la selección y los ajustes siguen siendo parte del trabajo.</p></details>
-<details><summary>¿Esto garantiza que voy a vender más?</summary><p>No. El servicio busca ayudarte a comunicar mejor y producir contenido de forma más eficiente.</p></details>
-</div></section>
+          <label for="formato">Formato</label>
+          <select id="formato">
+            <option value="instagram">Post de Instagram</option>
+            <option value="reel">Guion corto para Reel</option>
+            <option value="whatsapp">Mensaje de WhatsApp</option>
+          </select>
 
-<section id="contacto"><div class="wrap">
-<h2>Muéstrame qué necesitas comunicar</h2>
-<p>Agendemos una conversación de 20 minutos para conocer tu negocio, revisar qué tipo de contenido podríamos producir y ver si tiene sentido trabajar juntos.</p>
-<a class="cta" href="#" onclick="alert('Aquí irá tu enlace de agenda cuando lo tengas.');return false;">Agendar una reunión de 20 minutos</a>
-</div></section>
+          <label for="tono">Tono</label>
+          <select id="tono">
+            <option value="cercano">Cercano</option>
+            <option value="directo">Directo</option>
+            <option value="profesional">Profesional</option>
+          </select>
+
+          <label for="detalle">Dato útil o diferencial</label>
+          <textarea id="detalle">Hecho con fermentación lenta de 24 horas y entregas en el barrio durante la tarde.</textarea>
+
+          <button class="cta" onclick="generarTexto()">Generar ejemplo</button>
+        </div>
+
+        <div>
+          <label>Resultado</label>
+          <div id="resultado" class="output empty">Completa los campos y presiona “Generar ejemplo”.</div>
+          <div class="actions">
+            <button class="cta secondary" onclick="copiarTexto()">Copiar texto</button>
+            <button class="cta secondary" onclick="limpiarDemo()">Limpiar</button>
+          </div>
+          <p class="small">Esta demo corre completamente en el navegador. No usa API keys ni envía información a un servidor.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="after"><strong>Después:</strong> tienes una base concreta, clara y editable para publicar o convertir en una pieza audiovisual.</p>
+    <a class="cta" href="#contacto">¿Lo ves claro? Agenda 20 minutos y te armo la versión para tu negocio.</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Cómo trabajo</h2>
+    <div class="card"><p>Primero entiendo qué quieres comunicar, a quién quieres llegar y qué material ya tienes. Después definimos la pieza, preparo una primera propuesta, revisamos el resultado y hacemos los ajustes acordados.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Cómo armo un presupuesto</h2>
+    <div class="card"><p>El presupuesto depende del tipo de pieza, cantidad de contenidos, formatos, canales y materiales disponibles. Primero vemos tu necesidad y, si tiene sentido trabajar juntos, definimos alcance y presupuesto en una conversación de 20 minutos.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Tengo que saber usar inteligencia artificial?</summary><p>No. Yo me encargo de las herramientas y del proceso de producción.</p></details>
+    <details><summary>¿Tengo que llegar con una idea completamente definida?</summary><p>No. Podemos comenzar desde un producto, servicio, necesidad o idea que quieras comunicar.</p></details>
+    <details><summary>¿Qué tipo de contenido puedes crear?</summary><p>Imágenes, fotografía con IA, videos cortos, videos promocionales o explicativos, guiones, ganchos, CTA, textos, avatares, voces y doblajes con IA.</p></details>
+    <details><summary>¿Puedes adaptar un contenido para varias redes?</summary><p>Sí. Una misma idea puede convertirse en versiones para Instagram, TikTok, YouTube, Facebook u otros canales.</p></details>
+    <details><summary>¿La inteligencia artificial hace todo?</summary><p>No. La IA es una herramienta. El mensaje, el criterio de comunicación, la selección y los ajustes siguen siendo parte del trabajo.</p></details>
+    <details><summary>¿Esto garantiza que voy a vender más?</summary><p>No. El servicio busca ayudarte a comunicar mejor y producir contenido de forma más eficiente.</p></details>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <h2>Muéstrame qué necesitas comunicar</h2>
+    <p>Agendemos una conversación de 20 minutos para conocer tu negocio, revisar qué tipo de contenido podríamos producir y ver si tiene sentido trabajar juntos.</p>
+    <a class="cta" href="#" onclick="alert('Aquí irá tu enlace de agenda cuando lo tengas.');return false;">Agendar una reunión de 20 minutos</a>
+  </div>
+</section>
+
+<script>
+function generarTexto(){
+  const negocio = document.getElementById('negocio').value.trim() || 'tu negocio';
+  const oferta = document.getElementById('oferta').value.trim() || 'tu producto o servicio';
+  const formato = document.getElementById('formato').value;
+  const tono = document.getElementById('tono').value;
+  const detalle = document.getElementById('detalle').value.trim();
+
+  const aperturas = {
+    cercano: `Hoy en ${negocio} tenemos algo que vale la pena probar:`,
+    directo: `Si buscas una opción clara y sin vueltas, mira esto:`,
+    profesional: `${negocio} presenta una opción pensada para quienes valoran calidad y claridad:`
+  };
+
+  let cuerpo = '';
+  if(formato === 'instagram'){
+    cuerpo = `${aperturas[tono]} ${oferta}.\n\n${detalle ? detalle + '\n\n' : ''}Si te interesa, escríbenos y te contamos disponibilidad.`;
+  } else if(formato === 'reel'){
+    cuerpo = `GANCHO: ¿Todavía no has probado ${oferta.toLowerCase()}?\n\nDESARROLLO: En ${negocio} preparamos ${oferta.toLowerCase()}. ${detalle}\n\nCTA: Escríbenos y te contamos cómo pedirlo.`;
+  } else {
+    cuerpo = `Hola 👋 Somos ${negocio}. Hoy tenemos disponible ${oferta}. ${detalle}\n\nSi quieres, te confirmamos disponibilidad y te explicamos cómo pedirlo.`;
+  }
+
+  const out = document.getElementById('resultado');
+  out.textContent = cuerpo;
+  out.classList.remove('empty');
+}
+
+function copiarTexto(){
+  const txt = document.getElementById('resultado').textContent;
+  if(!txt || txt.includes('Completa los campos')) return;
+  navigator.clipboard.writeText(txt).then(() => alert('Texto copiado.'));
+}
+
+function limpiarDemo(){
+  document.getElementById('negocio').value='';
+  document.getElementById('oferta').value='';
+  document.getElementById('detalle').value='';
+  const out = document.getElementById('resultado');
+  out.textContent='Completa los campos y presiona “Generar ejemplo”.';
+  out.classList.add('empty');
+}
+</script>
+
 </body>
 </html>
