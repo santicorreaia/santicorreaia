@@ -13,7 +13,10 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);
+  line-height:1.6;-webkit-font-smoothing:antialiased
+}
 .wrap{width:min(92%,1100px);margin:auto}
 header,section{padding:60px 0}
 section{border-top:1px solid var(--line)}
@@ -25,27 +28,49 @@ p{color:var(--muted)}
 .card,.demo-shell,.step,.client-box,details{box-shadow:var(--shadow)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:14px 0}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;background:var(--accent);color:#111;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:10px;border:0;cursor:pointer}
+.cta{
+  display:inline-flex;align-items:center;justify-content:center;min-height:46px;
+  background:var(--accent);color:#111;text-decoration:none;font-weight:700;
+  padding:14px 20px;border-radius:10px;border:0;cursor:pointer
+}
 .cta.secondary{background:#24313d;color:var(--text);border:1px solid var(--line)}
 ul{padding-left:22px}
 li{margin:10px 0;color:#d7dde3}
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
 summary{cursor:pointer;font-weight:700}
+
+/* DEMO HÍBRIDA */
 .demo-shell{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:24px}
-.demo-note{padding:14px 16px;border-left:4px solid var(--accent);background:#121b24;border-radius:8px;margin-bottom:22px}
 .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 label{display:block;font-weight:700;margin:0 0 7px}
-input,select,textarea{width:100%;background:#0f1720;color:var(--text);border:1px solid #3a4b5a;border-radius:9px;padding:12px 13px;font:inherit;margin-bottom:14px}
-textarea{min-height:120px;resize:vertical}
-.output{min-height:250px;background:#0d151d;border:1px dashed #4a5d6e;border-radius:12px;padding:18px;white-space:pre-wrap;color:#e9eef2}
-.output.empty{color:#84919d}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-.after{margin-top:18px;color:var(--ok);font-weight:700}
-.small{font-size:.92rem;color:var(--muted)}
+input,select,textarea{
+  width:100%;background:#0f1720;color:var(--text);border:1px solid #3a4b5a;
+  border-radius:9px;padding:12px 13px;font:inherit;margin-bottom:14px
+}
+textarea{min-height:100px;resize:vertical}
+.output{
+  min-height:360px;background:#0d151d;border:1px dashed #4a5d6e;border-radius:12px;
+  padding:18px;color:#e9eef2
+}
+.output.empty{display:flex;align-items:center;justify-content:center;text-align:center;color:#84919d}
+.result-block{margin-bottom:18px}
+.result-title{font-weight:700;color:#fff;margin-bottom:5px}
+.result-text{color:#dfe6ec;white-space:pre-wrap}
+.format-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{background:#22303c;border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:.9rem;color:#dfe6ec}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.small{font-size:.9rem;color:#8f9daa;margin-top:14px}
+.demo-disclaimer{
+  margin-top:16px;padding:12px 14px;background:#121b24;border-left:4px solid var(--accent);
+  border-radius:8px;color:#cbd5dd;font-size:.92rem
+}
+
+/* PROCESO */
 .process{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 .step{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;min-height:180px}
 .step-num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#111;font-weight:700;margin-bottom:14px}
 .client-box{margin-top:22px;padding:18px 20px;border:1px solid var(--line);background:#121b24;border-radius:12px}
+
 @media(max-width:900px){.process{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){
   .wrap{width:100%;padding-left:18px;padding-right:18px}
@@ -58,7 +83,7 @@ textarea{min-height:120px;resize:vertical}
   .card,.demo-shell,.step,.client-box{padding:18px;border-radius:12px}
   .cta{width:100%;text-align:center;padding:13px 16px}
   input,select,textarea{font-size:16px}
-  .output{min-height:190px}
+  .output{min-height:300px}
   .actions{flex-direction:column}
 }
 </style>
@@ -70,7 +95,7 @@ textarea{min-height:120px;resize:vertical}
     <p class="eyebrow">Comunicación + Inteligencia Artificial</p>
     <h1>Convierto productos, servicios e ideas de emprendedores y pequeñas empresas en contenido audiovisual listo para publicar.</h1>
     <p>Soy Santiago Correa, comunicador social y periodista. Creo imágenes, videos, guiones, voces, avatares y adaptaciones para redes sociales según lo que cada negocio necesite comunicar.</p>
-    <a class="cta" href="#demo">Ver demo</a>
+    <a class="cta" href="#demo">Probar la demo</a>
   </div>
 </header>
 
@@ -100,53 +125,60 @@ textarea{min-height:120px;resize:vertical}
 
 <section id="demo">
   <div class="wrap">
-    <h2>Demo: de una idea suelta a un texto listo para publicar</h2>
-    <p class="demo-note"><strong>Antes:</strong> tienes algo que vender o comunicar, pero no sabes cómo convertirlo en un texto claro para redes.</p>
+    <h2>Demo: convierte una idea en una pieza lista para publicar</h2>
+    <p>Completa cuatro datos. La demo adapta el ejemplo al tipo de negocio, objetivo, público y formato que elijas.</p>
 
     <div class="demo-shell">
       <div class="demo-grid">
         <div>
-          <label for="negocio">Tipo de negocio</label>
-          <input id="negocio" value="Panadería artesanal">
+          <label for="negocio">¿Qué tipo de negocio tienes?</label>
+          <input id="negocio" placeholder="Ej.: consultorio psicológico, tienda de ropa, estudio contable">
 
-          <label for="oferta">¿Qué quieres promocionar?</label>
-          <input id="oferta" value="Pan de masa madre recién horneado">
+          <label for="oferta">¿Qué quieres promocionar o comunicar?</label>
+          <input id="oferta" placeholder="Ej.: asesoría para declarar impuestos, nueva colección, consulta inicial">
+
+          <label for="publico">¿A quién quieres llegar?</label>
+          <input id="publico" placeholder="Ej.: profesionales independientes, mujeres de 30 a 45 años">
+
+          <label for="objetivo">¿Qué quieres que haga esa persona?</label>
+          <select id="objetivo">
+            <option value="consultar">Que pregunte o escriba</option>
+            <option value="agendar">Que agende una reunión o cita</option>
+            <option value="comprar">Que compre o haga un pedido</option>
+            <option value="conocer">Que conozca mejor el producto o servicio</option>
+          </select>
 
           <label for="formato">Formato</label>
           <select id="formato">
             <option value="instagram">Post de Instagram</option>
             <option value="reel">Guion corto para Reel</option>
             <option value="whatsapp">Mensaje de WhatsApp</option>
+            <option value="linkedin">Post de LinkedIn</option>
           </select>
 
-          <label for="tono">Tono</label>
-          <select id="tono">
-            <option value="cercano">Cercano</option>
-            <option value="directo">Directo</option>
-            <option value="profesional">Profesional</option>
-          </select>
+          <label for="detalle">Dato que no debería faltar</label>
+          <textarea id="detalle" placeholder="Ej.: atención virtual, entrega el mismo día, 15 años de experiencia, cupos limitados"></textarea>
 
-          <label for="detalle">Dato útil o diferencial</label>
-          <textarea id="detalle">Hecho con fermentación lenta de 24 horas y entregas en el barrio durante la tarde.</textarea>
-
-          <button class="cta" onclick="generarTexto()">Generar ejemplo</button>
+          <button class="cta" onclick="generarDemo()">Generar ejemplo</button>
         </div>
 
         <div>
           <label>Resultado</label>
-          <div id="resultado" class="output empty">Completa los campos y presiona “Generar ejemplo”.</div>
-          <div class="actions">
-            <button class="cta secondary" onclick="copiarTexto()">Copiar texto</button>
-            <button class="cta secondary" onclick="reiniciarDemo()">Reiniciar demo</button>
-            <button class="cta secondary" onclick="recargarPagina()">Recargar página</button>
+          <div id="resultado" class="output empty">
+            Escribe algunos datos de tu negocio y presiona “Generar ejemplo”.
           </div>
-          <p class="small">Esta demo corre completamente en el navegador. No usa API keys ni envía información a un servidor.</p>
+
+          <div class="actions">
+            <button class="cta secondary" onclick="copiarResultado()">Copiar resultado</button>
+            <button class="cta secondary" onclick="reiniciarDemo()">Reiniciar demo</button>
+          </div>
+
+          <div class="demo-disclaimer">
+            Demo ilustrativa. La versión para clientes se adapta con IA al negocio, al objetivo y al contenido real.
+          </div>
         </div>
       </div>
     </div>
-
-    <p class="after"><strong>Después:</strong> tienes una base concreta, clara y editable para publicar o convertir en una pieza audiovisual.</p>
-    <a class="cta" href="#contacto">¿Lo ves claro? Agenda 20 minutos y te armo la versión para tu negocio.</a>
   </div>
 </section>
 
@@ -205,85 +237,167 @@ textarea{min-height:120px;resize:vertical}
 </section>
 
 <script>
-const defaults = {
-  negocio: 'Panadería artesanal',
-  oferta: 'Pan de masa madre recién horneado',
-  detalle: 'Hecho con fermentación lenta de 24 horas y entregas en el barrio durante la tarde.'
+const verbos = {
+  consultar: {
+    cta: "Escríbenos y te contamos cómo funciona.",
+    accion: "escribir o consultar"
+  },
+  agendar: {
+    cta: "Agenda una conversación y revisamos tu caso.",
+    accion: "agendar una reunión o cita"
+  },
+  comprar: {
+    cta: "Escríbenos para confirmar disponibilidad y hacer tu pedido.",
+    accion: "comprar o hacer un pedido"
+  },
+  conocer: {
+    cta: "Si quieres conocer más, escríbenos y te mostramos cómo funciona.",
+    accion: "conocer mejor la propuesta"
+  }
 };
 
-function pasarATu(texto){
+function limpiarFrase(texto){
   return texto
-    .replace(/\bmis\b/gi, 'tus')
-    .replace(/\bmi\b/gi, 'tu')
-    .replace(/\bnuestro\b/gi, 'tu')
-    .replace(/\bnuestros\b/gi, 'tus');
+    .trim()
+    .replace(/\s+/g,' ')
+    .replace(/[.]+$/,'');
 }
 
-function generarTexto(){
-  const negocio = document.getElementById('negocio').value.trim() || 'tu negocio';
-  const ofertaOriginal = document.getElementById('oferta').value.trim() || 'tu producto o servicio';
-  const oferta = pasarATu(ofertaOriginal);
-  const formato = document.getElementById('formato').value;
-  const tono = document.getElementById('tono').value;
-  const detalle = document.getElementById('detalle').value.trim();
+function articuloNegocio(negocio){
+  const n = negocio.toLowerCase();
+  if(n.includes('tienda') || n.includes('panadería') || n.includes('agencia') || n.includes('empresa')) return 'En';
+  return 'En';
+}
 
-  let cuerpo = '';
+function ganchoSegunObjetivo(oferta, objetivo, publico){
+  const o = oferta.toLowerCase();
+  const p = publico ? ` si eres ${publico}` : '';
 
+  if(objetivo === 'agendar') return `¿Buscas ${o}${p}?`;
+  if(objetivo === 'comprar') return `¿Necesitas ${o}${p}?`;
+  if(objetivo === 'conocer') return `Hay una forma más clara de conocer ${o}.`;
+  return `¿Quieres saber si ${o} puede servirte${p}?`;
+}
+
+function textoBase(negocio, oferta, publico, detalle, objetivo){
+  const publicoTxt = publico ? ` para ${publico}` : '';
+  const detalleTxt = detalle ? ` ${detalle}.` : '';
+  const accion = verbos[objetivo].accion;
+
+  return `${articuloNegocio(negocio)} ${negocio} trabajamos ${oferta.toLowerCase()}${publicoTxt}. La idea es que entiendas qué obtienes, cómo funciona y qué necesitas antes de ${accion}.${detalleTxt}`;
+}
+
+function adaptarFormato(formato, gancho, cuerpo, cta){
   if(formato === 'reel'){
-    cuerpo =
-`GANCHO: ¿Quieres ${oferta} de una forma más clara?
-
-DESARROLLO: ${detalle || `En ${negocio} tienes algo que vale la pena mostrar mejor.`}
-
-CTA: Escríbenos y te contamos cómo convertirlo en una pieza lista para publicar.`;
-  } else if(formato === 'instagram'){
-    const apertura = tono === 'directo'
-      ? `¿Quieres ${oferta} sin darle tantas vueltas?`
-      : tono === 'profesional'
-      ? `Una forma más clara de ${oferta}.`
-      : `¿Quieres ${oferta} y no sabes por dónde empezar?`;
-
-    cuerpo =
-`${apertura}
-
-${detalle || `En ${negocio} tienes una idea que puede convertirse en contenido claro y útil.`}
-
-Si te interesa, escríbenos y te contamos cómo hacerlo.`;
-  } else {
-    cuerpo =
-`Hola 👋
-
-¿Quieres ${oferta} de una forma más clara?
-
-${detalle || `Podemos ayudarte a convertir esa idea en contenido listo para usar.`}
-
-Si quieres, te contamos cómo hacerlo.`;
+    return {
+      gancho,
+      texto:`GANCHO:\n${gancho}\n\nDESARROLLO:\n${cuerpo}\n\nCTA:\n${cta}`,
+      formatos:["Reel","Historia","Short"]
+    };
   }
 
-  const out = document.getElementById('resultado');
-  out.textContent = cuerpo;
-  out.classList.remove('empty');
+  if(formato === 'whatsapp'){
+    return {
+      gancho,
+      texto:`Hola 👋\n\n${gancho}\n\n${cuerpo}\n\n${cta}`,
+      formatos:["WhatsApp","Respuesta rápida","Seguimiento"]
+    };
+  }
+
+  if(formato === 'linkedin'){
+    return {
+      gancho,
+      texto:`${gancho}\n\n${cuerpo}\n\n${cta}`,
+      formatos:["LinkedIn","Carrusel","Artículo corto"]
+    };
+  }
+
+  return {
+    gancho,
+    texto:`${gancho}\n\n${cuerpo}\n\n${cta}`,
+    formatos:["Instagram","Historia","Carrusel"]
+  };
 }
 
-function copiarTexto(){
-  const txt = document.getElementById('resultado').textContent;
-  if(!txt || txt.includes('Completa los campos')) return;
-  navigator.clipboard.writeText(txt).then(() => alert('Texto copiado.'));
+function generarDemo(){
+  const negocio = limpiarFrase(document.getElementById('negocio').value);
+  const oferta = limpiarFrase(document.getElementById('oferta').value);
+  const publico = limpiarFrase(document.getElementById('publico').value);
+  const objetivo = document.getElementById('objetivo').value;
+  const formato = document.getElementById('formato').value;
+  const detalle = limpiarFrase(document.getElementById('detalle').value);
+
+  const out = document.getElementById('resultado');
+
+  if(!negocio || !oferta){
+    out.classList.remove('empty');
+    out.innerHTML = '<div class="result-text">Para generar un ejemplo necesito, al menos, el tipo de negocio y qué quieres comunicar.</div>';
+    return;
+  }
+
+  const gancho = ganchoSegunObjetivo(oferta, objetivo, publico);
+  const cuerpo = textoBase(negocio, oferta, publico, detalle, objetivo);
+  const cta = verbos[objetivo].cta;
+  const resultado = adaptarFormato(formato, gancho, cuerpo, cta);
+
+  out.classList.remove('empty');
+  out.innerHTML = '';
+
+  const bloques = [
+    ['Gancho', resultado.gancho],
+    ['Pieza sugerida', resultado.texto],
+    ['CTA', cta]
+  ];
+
+  bloques.forEach(([titulo, texto])=>{
+    const block = document.createElement('div');
+    block.className = 'result-block';
+
+    const t = document.createElement('div');
+    t.className = 'result-title';
+    t.textContent = titulo;
+
+    const c = document.createElement('div');
+    c.className = 'result-text';
+    c.textContent = texto;
+
+    block.appendChild(t);
+    block.appendChild(c);
+    out.appendChild(block);
+  });
+
+  const title = document.createElement('div');
+  title.className = 'result-title';
+  title.textContent = 'También puede adaptarse a';
+  out.appendChild(title);
+
+  const chips = document.createElement('div');
+  chips.className = 'format-chips';
+  resultado.formatos.forEach(f=>{
+    const chip = document.createElement('span');
+    chip.className = 'chip';
+    chip.textContent = f;
+    chips.appendChild(chip);
+  });
+  out.appendChild(chips);
+}
+
+function copiarResultado(){
+  const out = document.getElementById('resultado');
+  if(out.classList.contains('empty')) return;
+  navigator.clipboard.writeText(out.innerText).then(()=>alert('Resultado copiado.'));
 }
 
 function reiniciarDemo(){
-  document.getElementById('negocio').value = defaults.negocio;
-  document.getElementById('oferta').value = defaults.oferta;
-  document.getElementById('detalle').value = defaults.detalle;
-  document.getElementById('formato').value = 'instagram';
-  document.getElementById('tono').value = 'cercano';
+  document.getElementById('negocio').value='';
+  document.getElementById('oferta').value='';
+  document.getElementById('publico').value='';
+  document.getElementById('detalle').value='';
+  document.getElementById('objetivo').value='consultar';
+  document.getElementById('formato').value='instagram';
   const out = document.getElementById('resultado');
-  out.textContent = 'Completa los campos y presiona “Generar ejemplo”.';
-  out.classList.add('empty');
-}
-
-function recargarPagina(){
-  window.location.href = window.location.pathname;
+  out.className='output empty';
+  out.textContent='Escribe algunos datos de tu negocio y presiona “Generar ejemplo”.';
 }
 </script>
 
