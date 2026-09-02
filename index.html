@@ -3,26 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1720">
 <title>Santiago Correa | Comunicación audiovisual con IA</title>
 <style>
 :root{
   --bg:#0f1720; --panel:#17212b; --panel2:#1c2834; --text:#f5f7fa;
   --muted:#b8c2cc; --accent:#ff8a1f; --line:#2f3d4a; --ok:#9bd3ae;
+  --shadow:0 10px 28px rgba(0,0,0,.14);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);
+  line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
+}
 .wrap{width:min(92%,1100px);margin:auto}
 header,section{padding:60px 0}
 section{border-top:1px solid var(--line)}
-h1{font-size:clamp(2.35rem,6vw,4.3rem);line-height:1.05;margin:0 0 18px}
-h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 14px}
+h1{font-size:clamp(2.35rem,6vw,4.3rem);line-height:1.05;margin:0 0 18px;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.12;margin:0 0 14px}
 h3{margin:0 0 8px}
 p{color:var(--muted)}
 .eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
+.card,.demo-shell,.step,.client-box,details{box-shadow:var(--shadow)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:14px 0}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.cta{display:inline-block;background:var(--accent);color:#111;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:10px;border:0;cursor:pointer}
+.cta{
+  display:inline-flex;align-items:center;justify-content:center;min-height:46px;
+  background:var(--accent);color:#111;text-decoration:none;font-weight:700;
+  padding:14px 20px;border-radius:10px;border:0;cursor:pointer
+}
 .cta.secondary{background:#24313d;color:var(--text);border:1px solid var(--line)}
 ul{padding-left:22px}
 li{margin:10px 0;color:#d7dde3}
@@ -49,40 +59,32 @@ textarea{min-height:120px;resize:vertical}
 .small{font-size:.92rem;color:var(--muted)}
 
 /* PROCESO */
-.process{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  margin-top:24px
-}
-.step{
-  position:relative;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:22px;
-  min-height:180px
-}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.step{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;min-height:180px}
 .step-num{
-  width:34px;height:34px;border-radius:50%;
-  display:grid;place-items:center;
-  background:var(--accent);color:#111;font-weight:700;
-  margin-bottom:14px
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:var(--accent);color:#111;font-weight:700;margin-bottom:14px
 }
-.client-box{
-  margin-top:22px;
-  padding:18px 20px;
-  border:1px solid var(--line);
-  background:#121b24;
-  border-radius:12px
-}
+.client-box{margin-top:22px;padding:18px 20px;border:1px solid var(--line);background:#121b24;border-radius:12px}
 
 @media(max-width:900px){
   .process{grid-template-columns:1fr 1fr}
 }
 @media(max-width:760px){
-  .grid,.demo-grid,.process{grid-template-columns:1fr}
-  header,section{padding:48px 0}
+  .wrap{width:100%;padding-left:18px;padding-right:18px}
+  header{padding:34px 0 38px}
+  section{padding:38px 0}
+  h1{font-size:clamp(2rem,10vw,3rem);line-height:1.04}
+  h2{font-size:clamp(1.55rem,7vw,2.1rem)}
+  .eyebrow{font-size:.76rem;line-height:1.35}
+  .grid,.demo-grid,.process{grid-template-columns:1fr;gap:14px}
+  .card,.demo-shell,.step,.client-box{padding:18px;border-radius:12px}
+  .cta{width:100%;text-align:center;padding:13px 16px}
+  input,select,textarea{font-size:16px}
+  .output{min-height:190px}
+  .actions{flex-direction:column}
+  .actions .cta{width:100%}
+  details{font-size:1rem}
 }
 </style>
 </head>
@@ -125,36 +127,29 @@ textarea{min-height:120px;resize:vertical}
   <div class="wrap">
     <h2>Demo: de una idea suelta a un texto listo para publicar</h2>
     <p class="demo-note"><strong>Antes:</strong> tienes algo que vender o comunicar, pero no sabes cómo convertirlo en un texto claro para redes.</p>
-
     <div class="demo-shell">
       <div class="demo-grid">
         <div>
           <label for="negocio">Tipo de negocio</label>
           <input id="negocio" value="Panadería artesanal">
-
           <label for="oferta">¿Qué quieres promocionar?</label>
           <input id="oferta" value="Pan de masa madre recién horneado">
-
           <label for="formato">Formato</label>
           <select id="formato">
             <option value="instagram">Post de Instagram</option>
             <option value="reel">Guion corto para Reel</option>
             <option value="whatsapp">Mensaje de WhatsApp</option>
           </select>
-
           <label for="tono">Tono</label>
           <select id="tono">
             <option value="cercano">Cercano</option>
             <option value="directo">Directo</option>
             <option value="profesional">Profesional</option>
           </select>
-
           <label for="detalle">Dato útil o diferencial</label>
           <textarea id="detalle">Hecho con fermentación lenta de 24 horas y entregas en el barrio durante la tarde.</textarea>
-
           <button class="cta" onclick="generarTexto()">Generar ejemplo</button>
         </div>
-
         <div>
           <label>Resultado</label>
           <div id="resultado" class="output empty">Completa los campos y presiona “Generar ejemplo”.</div>
@@ -166,7 +161,6 @@ textarea{min-height:120px;resize:vertical}
         </div>
       </div>
     </div>
-
     <p class="after"><strong>Después:</strong> tienes una base concreta, clara y editable para publicar o convertir en una pieza audiovisual.</p>
     <a class="cta" href="#contacto">¿Lo ves claro? Agenda 20 minutos y te armo la versión para tu negocio.</a>
   </div>
@@ -176,45 +170,14 @@ textarea{min-height:120px;resize:vertical}
   <div class="wrap">
     <h2>Cómo trabajo</h2>
     <p>Primero ves una demo y entiendes qué se puede hacer. Si tiene sentido para tu negocio, seguimos este camino:</p>
-
     <div class="process">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Reunión de 20 minutos</h3>
-        <p>Entiendo qué quieres comunicar, a quién quieres llegar y cuál es el problema concreto que necesitas resolver.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Demo adaptada a tu negocio</h3>
-        <p>Te muestro una versión aplicada a tu caso. La ves antes de hablar de inversión.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Alcance por escrito</h3>
-        <p>Definimos qué incluye el trabajo, qué no incluye, qué necesito de ti y qué vas a recibir.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">4</div>
-        <h3>Construcción</h3>
-        <p>Desarrollo el proyecto en el plazo acordado. Según el alcance, puede ser de 7, 14 o 30 días.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">5</div>
-        <h3>Entrega y ajuste</h3>
-        <p>Recibes el material acordado, revisamos juntos el resultado y hacemos un ajuste final si hace falta.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">6</div>
-        <h3>Qué sigue después</h3>
-        <p>Definimos si el trabajo termina ahí o si conviene continuar con nuevas piezas, adaptaciones o acompañamiento.</p>
-      </div>
+      <div class="step"><div class="step-num">1</div><h3>Reunión de 20 minutos</h3><p>Entiendo qué quieres comunicar, a quién quieres llegar y cuál es el problema concreto que necesitas resolver.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Demo adaptada a tu negocio</h3><p>Te muestro una versión aplicada a tu caso. La ves antes de hablar de inversión.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Alcance por escrito</h3><p>Definimos qué incluye el trabajo, qué no incluye, qué necesito de ti y qué vas a recibir.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Construcción</h3><p>Desarrollo el proyecto en el plazo acordado. Según el alcance, puede ser de 7, 14 o 30 días.</p></div>
+      <div class="step"><div class="step-num">5</div><h3>Entrega y ajuste</h3><p>Recibes el material acordado, revisamos juntos el resultado y hacemos un ajuste final si hace falta.</p></div>
+      <div class="step"><div class="step-num">6</div><h3>Qué sigue después</h3><p>Definimos si el trabajo termina ahí o si conviene continuar con nuevas piezas, adaptaciones o acompañamiento.</p></div>
     </div>
-
     <div class="client-box">
       <strong>¿Qué necesitas poner tú?</strong>
       <p>La información o accesos necesarios para trabajar y, cuando el proyecto lo requiera, una reunión semanal breve para revisar avances.</p>
@@ -238,46 +201,14 @@ textarea{min-height:120px;resize:vertical}
 <section id="faq">
   <div class="wrap">
     <h2>Preguntas frecuentes</h2>
-
-    <details>
-      <summary>¿Cuánto sale?</summary>
-      <p>Lo vemos después de que veas la demo. Primero necesito entender qué necesitas y qué alcance tendría el trabajo. En la reunión de 20 minutos revisamos tu caso y te paso una propuesta concreta.</p>
-    </details>
-
-    <details>
-      <summary>¿Me puedes pasar el precio por aquí y después vemos?</summary>
-      <p>Prefiero no darte un número sin contexto. Si te paso un precio antes de que veas qué incluye, probablemente estemos hablando de cosas distintas. Mira la demo y, si tiene sentido para ti, coordinamos una reunión breve.</p>
-    </details>
-
-    <details>
-      <summary>¿Cuánto tiempo tarda?</summary>
-      <p>Depende del alcance. Los proyectos se organizan según lo que haya que producir y adaptar. Antes de empezar dejamos por escrito qué se entrega y en qué plazo.</p>
-    </details>
-
-    <details>
-      <summary>No sé si esto sirve para un negocio como el mío.</summary>
-      <p>La forma más fácil de saberlo es ver un ejemplo aplicado a un caso concreto. La demo te muestra cómo trabajo y, si tu necesidad es distinta, en la reunión revisamos si realmente tiene sentido adaptarlo a tu negocio.</p>
-    </details>
-
-    <details>
-      <summary>¿Y si no funciona?</summary>
-      <p>No prometo ventas ni resultados automáticos. Lo que sí dejamos claro antes de empezar es qué se va a construir, qué vas a recibir y qué problema de comunicación buscamos resolver.</p>
-    </details>
-
-    <details>
-      <summary>¿Después me quedo dependiendo de ti para todo?</summary>
-      <p>No necesariamente. Definimos desde el principio qué recibes y qué puedes usar por tu cuenta. Si después quieres nuevas piezas, adaptaciones o acompañamiento, se acuerda aparte.</p>
-    </details>
-
-    <details>
-      <summary>¿Tengo que saber usar inteligencia artificial?</summary>
-      <p>No. Yo me encargo de las herramientas y del proceso de producción. Tú aportas la información del negocio y revisamos juntos lo que haga falta.</p>
-    </details>
-
-    <details>
-      <summary>¿Qué necesitas de mí para empezar?</summary>
-      <p>Información clara sobre tu producto, servicio o idea, los materiales que ya tengas y los accesos que sean necesarios para el proyecto. Si hace falta, hacemos una reunión breve para ordenar todo.</p>
-    </details>
+    <details><summary>¿Cuánto sale?</summary><p>Lo vemos después de que veas la demo. Primero necesito entender qué necesitas y qué alcance tendría el trabajo. En la reunión de 20 minutos revisamos tu caso y te paso una propuesta concreta.</p></details>
+    <details><summary>¿Me puedes pasar el precio por aquí y después vemos?</summary><p>Prefiero no darte un número sin contexto. Si te paso un precio antes de que veas qué incluye, probablemente estemos hablando de cosas distintas. Mira la demo y, si tiene sentido para ti, coordinamos una reunión breve.</p></details>
+    <details><summary>¿Cuánto tiempo tarda?</summary><p>Depende del alcance. Los proyectos se organizan según lo que haya que producir y adaptar. Antes de empezar dejamos por escrito qué se entrega y en qué plazo.</p></details>
+    <details><summary>No sé si esto sirve para un negocio como el mío.</summary><p>La forma más fácil de saberlo es ver un ejemplo aplicado a un caso concreto. La demo te muestra cómo trabajo y, si tu necesidad es distinta, en la reunión revisamos si realmente tiene sentido adaptarlo a tu negocio.</p></details>
+    <details><summary>¿Y si no funciona?</summary><p>No prometo ventas ni resultados automáticos. Lo que sí dejamos claro antes de empezar es qué se va a construir, qué vas a recibir y qué problema de comunicación buscamos resolver.</p></details>
+    <details><summary>¿Después me quedo dependiendo de ti para todo?</summary><p>No necesariamente. Definimos desde el principio qué recibes y qué puedes usar por tu cuenta. Si después quieres nuevas piezas, adaptaciones o acompañamiento, se acuerda aparte.</p></details>
+    <details><summary>¿Tengo que saber usar inteligencia artificial?</summary><p>No. Yo me encargo de las herramientas y del proceso de producción. Tú aportas la información del negocio y revisamos juntos lo que haga falta.</p></details>
+    <details><summary>¿Qué necesitas de mí para empezar?</summary><p>Información clara sobre tu producto, servicio o idea, los materiales que ya tengas y los accesos que sean necesarios para el proyecto. Si hace falta, hacemos una reunión breve para ordenar todo.</p></details>
   </div>
 </section>
 
@@ -291,47 +222,40 @@ textarea{min-height:120px;resize:vertical}
 
 <script>
 function generarTexto(){
-  const negocio = document.getElementById('negocio').value.trim() || 'tu negocio';
-  const oferta = document.getElementById('oferta').value.trim() || 'tu producto o servicio';
-  const formato = document.getElementById('formato').value;
-  const tono = document.getElementById('tono').value;
-  const detalle = document.getElementById('detalle').value.trim();
-
-  const aperturas = {
-    cercano: `Hoy en ${negocio} tenemos algo que vale la pena probar:`,
-    directo: `Si buscas una opción clara y sin vueltas, mira esto:`,
-    profesional: `${negocio} presenta una opción pensada para quienes valoran calidad y claridad:`
+  const negocio=document.getElementById('negocio').value.trim()||'tu negocio';
+  const oferta=document.getElementById('oferta').value.trim()||'tu producto o servicio';
+  const formato=document.getElementById('formato').value;
+  const tono=document.getElementById('tono').value;
+  const detalle=document.getElementById('detalle').value.trim();
+  const aperturas={
+    cercano:`Hoy en ${negocio} tenemos algo que vale la pena probar:`,
+    directo:`Si buscas una opción clara y sin vueltas, mira esto:`,
+    profesional:`${negocio} presenta una opción pensada para quienes valoran calidad y claridad:`
   };
-
-  let cuerpo = '';
-  if(formato === 'instagram'){
-    cuerpo = `${aperturas[tono]} ${oferta}.\n\n${detalle ? detalle + '\n\n' : ''}Si te interesa, escríbenos y te contamos disponibilidad.`;
-  } else if(formato === 'reel'){
-    cuerpo = `GANCHO: ¿Todavía no has probado ${oferta.toLowerCase()}?\n\nDESARROLLO: En ${negocio} preparamos ${oferta.toLowerCase()}. ${detalle}\n\nCTA: Escríbenos y te contamos cómo pedirlo.`;
-  } else {
-    cuerpo = `Hola 👋 Somos ${negocio}. Hoy tenemos disponible ${oferta}. ${detalle}\n\nSi quieres, te confirmamos disponibilidad y te explicamos cómo pedirlo.`;
+  let cuerpo='';
+  if(formato==='instagram'){
+    cuerpo=`${aperturas[tono]} ${oferta}.\n\n${detalle?detalle+'\n\n':''}Si te interesa, escríbenos y te contamos disponibilidad.`;
+  }else if(formato==='reel'){
+    cuerpo=`GANCHO: ¿Todavía no has probado ${oferta.toLowerCase()}?\n\nDESARROLLO: En ${negocio} preparamos ${oferta.toLowerCase()}. ${detalle}\n\nCTA: Escríbenos y te contamos cómo pedirlo.`;
+  }else{
+    cuerpo=`Hola 👋 Somos ${negocio}. Hoy tenemos disponible ${oferta}. ${detalle}\n\nSi quieres, te confirmamos disponibilidad y te explicamos cómo pedirlo.`;
   }
-
-  const out = document.getElementById('resultado');
-  out.textContent = cuerpo;
-  out.classList.remove('empty');
+  const out=document.getElementById('resultado');
+  out.textContent=cuerpo;out.classList.remove('empty');
 }
-
 function copiarTexto(){
-  const txt = document.getElementById('resultado').textContent;
-  if(!txt || txt.includes('Completa los campos')) return;
-  navigator.clipboard.writeText(txt).then(() => alert('Texto copiado.'));
+  const txt=document.getElementById('resultado').textContent;
+  if(!txt||txt.includes('Completa los campos'))return;
+  navigator.clipboard.writeText(txt).then(()=>alert('Texto copiado.'));
 }
-
 function limpiarDemo(){
   document.getElementById('negocio').value='';
   document.getElementById('oferta').value='';
   document.getElementById('detalle').value='';
-  const out = document.getElementById('resultado');
+  const out=document.getElementById('resultado');
   out.textContent='Completa los campos y presiona “Generar ejemplo”.';
   out.classList.add('empty');
 }
 </script>
-
 </body>
 </html>
