@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet">
 
-
 <style>
 :root{
   --teal:#22D3C5;
@@ -100,7 +99,6 @@ p{color:var(--muted)}
   line-height:1.75;
   margin-bottom:26px
 }
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 .cta{
   display:inline-flex;align-items:center;justify-content:center;
   min-height:48px;
@@ -143,7 +141,6 @@ details{
 }
 summary{cursor:pointer;color:var(--navy);font-size:1.03rem}
 
-/* DEMO */
 #demo{background:var(--white)}
 .demo-shell{
   background:linear-gradient(145deg,#FFFFFF 0%,#F0FBFB 100%);
@@ -206,8 +203,6 @@ textarea{min-height:105px;resize:vertical}
   color:#476777;
   font-size:.92rem
 }
-
-/* PROCESS */
 .process{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 .step{
   border-radius:18px;
@@ -244,6 +239,55 @@ footer{
 }
 footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 
+body{font-size:18px}
+header{
+  background:
+    radial-gradient(circle at 88% 16%, rgba(34,211,197,.34), transparent 30%),
+    radial-gradient(circle at 12% 8%, rgba(20,100,176,.20), transparent 28%),
+    linear-gradient(135deg,#F4F7F8 0%,#E8FBF9 52%,#EAF2FB 100%);
+}
+h1{font-size:clamp(3.4rem,8.8vw,6.8rem)}
+h2{font-size:clamp(2.35rem,5vw,3.6rem)}
+h3{font-size:1.5rem}
+p,li,details,input,select,textarea{font-size:1.08rem}
+.hero-copy{font-size:1.28rem;line-height:1.75}
+.eyebrow{font-size:1rem}
+.brand{font-size:1.55rem}
+.cta{font-size:1.08rem;padding:15px 22px}
+.card:nth-child(1){
+  background:linear-gradient(145deg,#FFFFFF 0%,#E7FAF7 100%);
+  border-top:5px solid var(--teal);
+}
+.card:nth-child(2){
+  background:linear-gradient(145deg,#FFFFFF 0%,#EAF2FB 100%);
+  border-top:5px solid var(--blue);
+}
+#demo{background:linear-gradient(180deg,#FFFFFF 0%,#EFFBFA 100%)}
+#ia{background:linear-gradient(180deg,#F7FCFC 0%,#EEF8FB 100%)}
+#ia .card{
+  background:linear-gradient(145deg,#FFFFFF 0%,#E7FAF7 100%);
+  border-left:6px solid var(--teal);
+}
+#proceso{background:linear-gradient(180deg,#F4F7F8 0%,#EDF5FB 100%)}
+.step:nth-child(3n+1){border-top:5px solid var(--teal)}
+.step:nth-child(3n+2){border-top:5px solid var(--blue)}
+.step:nth-child(3n){border-top:5px solid var(--aqua)}
+#inversion .card{
+  background:linear-gradient(145deg,#FFFFFF 0%,#EAF2FB 100%);
+  border-left:6px solid var(--blue);
+}
+#faq{background:linear-gradient(180deg,#F7FCFC 0%,#F4F7F8 100%)}
+details:nth-of-type(odd){border-left:5px solid var(--teal)}
+details:nth-of-type(even){border-left:5px solid var(--blue)}
+#contacto{
+  background:
+    radial-gradient(circle at 90% 20%, rgba(34,211,197,.24), transparent 28%),
+    linear-gradient(135deg,#0A2540 0%,#123B60 100%);
+}
+#contacto h2{font-size:clamp(2.5rem,5vw,3.7rem)}
+#contacto p{font-size:1.15rem}
+footer{border-top:4px solid var(--teal)}
+
 @media(max-width:900px){
   .process{grid-template-columns:1fr 1fr}
 }
@@ -253,120 +297,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
   .wrap{width:100%;padding-left:18px;padding-right:18px}
   header{padding:52px 0 46px}
   section{padding:44px 0}
-  h1{font-size:clamp(2.65rem,13vw,4rem)}
-  h2{font-size:clamp(1.85rem,8vw,2.45rem)}
-  .grid,.demo-grid,.process{grid-template-columns:1fr;gap:14px}
-  .card,.demo-shell,.step,.client-box{padding:18px}
-  .cta{width:100%;text-align:center}
-  .hero-actions{flex-direction:column}
-  input,select,textarea{font-size:16px}
-  .output{min-height:310px}
-  .actions{flex-direction:column}
-}
-</style>
-
-
-<style>
-/* Ajuste solicitado: más color + tipografía más grande */
-body{
-  font-size:18px;
-}
-header{
-  background:
-    radial-gradient(circle at 88% 16%, rgba(34,211,197,.34), transparent 30%),
-    radial-gradient(circle at 12% 8%, rgba(20,100,176,.20), transparent 28%),
-    linear-gradient(135deg,#F4F7F8 0%,#E8FBF9 52%,#EAF2FB 100%);
-}
-h1{
-  font-size:clamp(3.4rem,8.8vw,6.8rem);
-}
-h2{
-  font-size:clamp(2.35rem,5vw,3.6rem);
-}
-h3{
-  font-size:1.5rem;
-}
-p,li,details,input,select,textarea{
-  font-size:1.08rem;
-}
-.hero-copy{
-  font-size:1.28rem;
-  line-height:1.75;
-}
-.eyebrow{
-  font-size:1rem;
-}
-.brand{
-  font-size:1.55rem;
-}
-.cta{
-  font-size:1.08rem;
-  padding:15px 22px;
-}
-.card:nth-child(1){
-  background:linear-gradient(145deg,#FFFFFF 0%,#E7FAF7 100%);
-  border-top:5px solid var(--teal);
-}
-.card:nth-child(2){
-  background:linear-gradient(145deg,#FFFFFF 0%,#EAF2FB 100%);
-  border-top:5px solid var(--blue);
-}
-#demo{
-  background:linear-gradient(180deg,#FFFFFF 0%,#EFFBFA 100%);
-}
-#proceso{
-  background:linear-gradient(180deg,#F4F7F8 0%,#EDF5FB 100%);
-}
-.step:nth-child(3n+1){
-  border-top:5px solid var(--teal);
-}
-.step:nth-child(3n+2){
-  border-top:5px solid var(--blue);
-}
-.step:nth-child(3n){
-  border-top:5px solid var(--aqua);
-}
-#inversion .card{
-  background:linear-gradient(145deg,#FFFFFF 0%,#EAF2FB 100%);
-  border-left:6px solid var(--blue);
-}
-#faq{
-  background:linear-gradient(180deg,#F7FCFC 0%,#F4F7F8 100%);
-}
-details:nth-of-type(odd){
-  border-left:5px solid var(--teal);
-}
-details:nth-of-type(even){
-  border-left:5px solid var(--blue);
-}
-#contacto{
-  background:
-    radial-gradient(circle at 90% 20%, rgba(34,211,197,.24), transparent 28%),
-    linear-gradient(135deg,#0A2540 0%,#123B60 100%);
-}
-#contacto h2{
-  font-size:clamp(2.5rem,5vw,3.7rem);
-}
-#contacto p{
-  font-size:1.15rem;
-}
-footer{
-  border-top:4px solid var(--teal);
-}
-@media(max-width:760px){
   body{font-size:17px}
   h1{font-size:clamp(3rem,14vw,4.4rem)}
   h2{font-size:clamp(2.1rem,9vw,2.8rem)}
   h3{font-size:1.35rem}
   .hero-copy{font-size:1.16rem}
   p,li,details,input,select,textarea{font-size:1.03rem}
-  .cta{font-size:1.03rem}
+  .grid,.demo-grid,.process{grid-template-columns:1fr;gap:14px}
+  .card,.demo-shell,.step,.client-box{padding:18px}
+  .cta{width:100%;text-align:center;font-size:1.03rem}
+  input,select,textarea{font-size:16px}
+  .output{min-height:310px}
+  .actions{flex-direction:column}
 }
 </style>
-
 </head>
 <body>
-
 
 <div class="brandbar">
   <div class="wrap">
@@ -452,17 +398,25 @@ footer{
           <div id="resultado" class="output empty">
             Escribe algunos datos de tu negocio y presiona “Generar ejemplo”.
           </div>
-
           <div class="actions">
             <button class="cta secondary" onclick="copiarResultado()">Copiar resultado</button>
             <button class="cta secondary" onclick="reiniciarDemo()">Reiniciar demo</button>
           </div>
-
           <div class="demo-disclaimer">
             Demo ilustrativa. La versión para clientes se adapta con IA al negocio, al objetivo y al contenido real.
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="ia">
+  <div class="wrap">
+    <h2>¿Dónde entra la inteligencia artificial?</h2>
+    <div class="card">
+      <p>La uso para ayudarte a convertir información, ideas y tareas repetitivas en soluciones concretas: contenido, guiones, propuestas, respuestas, organización de información o procesos simples.</p>
+      <p>Primero entendemos qué necesitas. Después vemos si la IA realmente tiene sentido para resolverlo y cómo usarla sin perder la claridad ni la voz de tu negocio.</p>
     </div>
   </div>
 </section>
@@ -477,7 +431,7 @@ footer{
       <div class="step"><div class="step-num">3</div><h3>Alcance por escrito</h3><p>Definimos qué incluye el trabajo, qué no incluye, qué necesito de ti y qué vas a recibir.</p></div>
       <div class="step"><div class="step-num">4</div><h3>Construcción</h3><p>Desarrollo el proyecto en el plazo acordado. Según el alcance, puede ser de 7, 14 o 30 días.</p></div>
       <div class="step"><div class="step-num">5</div><h3>Entrega y ajuste</h3><p>Recibes el material acordado, revisamos juntos el resultado y hacemos un ajuste final si hace falta.</p></div>
-      <div class="step"><div class="step-num">6</div><h3>Qué sigue después</h3><p>Definimos si el trabajo termina ahí o si conviene continuar con nuevas piezas, adaptaciones o acompañamiento.</p></div>
+      <div class="step"><div class="step-num">6</div><h3>¿Qué sigue después?</h3><p>Definimos si el trabajo termina ahí o si conviene continuar con nuevas piezas, adaptaciones o acompañamiento.</p></div>
     </div>
     <div class="client-box">
       <strong>¿Qué necesitas poner tú?</strong>
@@ -488,7 +442,7 @@ footer{
 
 <section id="inversion">
   <div class="wrap">
-    <h2>Cómo se arma la inversión</h2>
+    <h2>¿Cómo se arma la inversión?</h2>
     <div class="card">
       <p>Primero ves una demo aplicada a un caso concreto. No cotizo una idea en el aire: el presupuesto se arma cuando ya está claro qué necesitas y qué resultado vamos a construir.</p>
       <p>La inversión cambia según el alcance, la cantidad de piezas, los formatos, los canales donde se va a usar el contenido, el plazo de entrega y la información o accesos que tengas que aportar.</p>
@@ -523,41 +477,20 @@ footer{
 
 <script>
 const verbos = {
-  consultar: {
-    cta: "Escríbenos y te contamos cómo funciona.",
-    accion: "escribir o consultar"
-  },
-  agendar: {
-    cta: "Agenda una conversación y revisamos tu caso.",
-    accion: "agendar una reunión o cita"
-  },
-  comprar: {
-    cta: "Escríbenos para confirmar disponibilidad y hacer tu pedido.",
-    accion: "comprar o hacer un pedido"
-  },
-  conocer: {
-    cta: "Si quieres conocer más, escríbenos y te mostramos cómo funciona.",
-    accion: "conocer mejor la propuesta"
-  }
+  consultar: {cta:"Escríbenos y te contamos cómo funciona.",accion:"escribir o consultar"},
+  agendar: {cta:"Agenda una conversación y revisamos tu caso.",accion:"agendar una reunión o cita"},
+  comprar: {cta:"Escríbenos para confirmar disponibilidad y hacer tu pedido.",accion:"comprar o hacer un pedido"},
+  conocer: {cta:"Si quieres conocer más, escríbenos y te mostramos cómo funciona.",accion:"conocer mejor la propuesta"}
 };
 
 function limpiarFrase(texto){
-  return texto
-    .trim()
-    .replace(/\s+/g,' ')
-    .replace(/[.]+$/,'');
+  return texto.trim().replace(/\s+/g,' ').replace(/[.]+$/,'');
 }
-
-function articuloNegocio(negocio){
-  const n = negocio.toLowerCase();
-  if(n.includes('tienda') || n.includes('panadería') || n.includes('agencia') || n.includes('empresa')) return 'En';
-  return 'En';
-}
+function articuloNegocio(){ return 'En'; }
 
 function ganchoSegunObjetivo(oferta, objetivo, publico){
   const o = oferta.toLowerCase();
   const p = publico ? ` si eres ${publico}` : '';
-
   if(objetivo === 'agendar') return `¿Buscas ${o}${p}?`;
   if(objetivo === 'comprar') return `¿Necesitas ${o}${p}?`;
   if(objetivo === 'conocer') return `Hay una forma más clara de conocer ${o}.`;
@@ -568,40 +501,14 @@ function textoBase(negocio, oferta, publico, detalle, objetivo){
   const publicoTxt = publico ? ` para ${publico}` : '';
   const detalleTxt = detalle ? ` ${detalle}.` : '';
   const accion = verbos[objetivo].accion;
-
-  return `${articuloNegocio(negocio)} ${negocio} trabajamos ${oferta.toLowerCase()}${publicoTxt}. La idea es que entiendas qué obtienes, cómo funciona y qué necesitas antes de ${accion}.${detalleTxt}`;
+  return `${articuloNegocio()} ${negocio} trabajamos ${oferta.toLowerCase()}${publicoTxt}. La idea es que entiendas qué obtienes, cómo funciona y qué necesitas antes de ${accion}.${detalleTxt}`;
 }
 
 function adaptarFormato(formato, gancho, cuerpo, cta){
-  if(formato === 'reel'){
-    return {
-      gancho,
-      texto:`GANCHO:\n${gancho}\n\nDESARROLLO:\n${cuerpo}\n\nCTA:\n${cta}`,
-      formatos:["Reel","Historia","Short"]
-    };
-  }
-
-  if(formato === 'whatsapp'){
-    return {
-      gancho,
-      texto:`Hola 👋\n\n${gancho}\n\n${cuerpo}\n\n${cta}`,
-      formatos:["WhatsApp","Respuesta rápida","Seguimiento"]
-    };
-  }
-
-  if(formato === 'linkedin'){
-    return {
-      gancho,
-      texto:`${gancho}\n\n${cuerpo}\n\n${cta}`,
-      formatos:["LinkedIn","Carrusel","Artículo corto"]
-    };
-  }
-
-  return {
-    gancho,
-    texto:`${gancho}\n\n${cuerpo}\n\n${cta}`,
-    formatos:["Instagram","Historia","Carrusel"]
-  };
+  if(formato === 'reel') return {gancho,texto:`GANCHO:\n${gancho}\n\nDESARROLLO:\n${cuerpo}\n\nCTA:\n${cta}`,formatos:["Reel","Historia","Short"]};
+  if(formato === 'whatsapp') return {gancho,texto:`Hola 👋\n\n${gancho}\n\n${cuerpo}\n\n${cta}`,formatos:["WhatsApp","Respuesta rápida","Seguimiento"]};
+  if(formato === 'linkedin') return {gancho,texto:`${gancho}\n\n${cuerpo}\n\n${cta}`,formatos:["LinkedIn","Carrusel","Artículo corto"]};
+  return {gancho,texto:`${gancho}\n\n${cuerpo}\n\n${cta}`,formatos:["Instagram","Historia","Carrusel"]};
 }
 
 function generarDemo(){
@@ -611,7 +518,6 @@ function generarDemo(){
   const objetivo = document.getElementById('objetivo').value;
   const formato = document.getElementById('formato').value;
   const detalle = limpiarFrase(document.getElementById('detalle').value);
-
   const out = document.getElementById('resultado');
 
   if(!negocio || !oferta){
@@ -628,47 +534,38 @@ function generarDemo(){
   out.classList.remove('empty');
   out.innerHTML = '';
 
-  const bloques = [
-    ['Gancho', resultado.gancho],
-    ['Pieza sugerida', resultado.texto],
-    ['CTA', cta]
-  ];
-
-  bloques.forEach(([titulo, texto])=>{
-    const block = document.createElement('div');
-    block.className = 'result-block';
-
-    const t = document.createElement('div');
-    t.className = 'result-title';
-    t.textContent = titulo;
-
-    const c = document.createElement('div');
-    c.className = 'result-text';
-    c.textContent = texto;
-
+  [['Gancho',resultado.gancho],['Pieza sugerida',resultado.texto],['CTA',cta]].forEach(([titulo,texto])=>{
+    const block=document.createElement('div');
+    block.className='result-block';
+    const t=document.createElement('div');
+    t.className='result-title';
+    t.textContent=titulo;
+    const c=document.createElement('div');
+    c.className='result-text';
+    c.textContent=texto;
     block.appendChild(t);
     block.appendChild(c);
     out.appendChild(block);
   });
 
-  const title = document.createElement('div');
-  title.className = 'result-title';
-  title.textContent = 'También puede adaptarse a';
+  const title=document.createElement('div');
+  title.className='result-title';
+  title.textContent='También puede adaptarse a';
   out.appendChild(title);
 
-  const chips = document.createElement('div');
-  chips.className = 'format-chips';
+  const chips=document.createElement('div');
+  chips.className='format-chips';
   resultado.formatos.forEach(f=>{
-    const chip = document.createElement('span');
-    chip.className = 'chip';
-    chip.textContent = f;
+    const chip=document.createElement('span');
+    chip.className='chip';
+    chip.textContent=f;
     chips.appendChild(chip);
   });
   out.appendChild(chips);
 }
 
 function copiarResultado(){
-  const out = document.getElementById('resultado');
+  const out=document.getElementById('resultado');
   if(out.classList.contains('empty')) return;
   navigator.clipboard.writeText(out.innerText).then(()=>alert('Resultado copiado.'));
 }
@@ -680,12 +577,11 @@ function reiniciarDemo(){
   document.getElementById('detalle').value='';
   document.getElementById('objetivo').value='consultar';
   document.getElementById('formato').value='instagram';
-  const out = document.getElementById('resultado');
+  const out=document.getElementById('resultado');
   out.className='output empty';
   out.textContent='Escribe algunos datos de tu negocio y presiona “Generar ejemplo”.';
 }
 </script>
-
 
 <footer>
   <div class="wrap">
