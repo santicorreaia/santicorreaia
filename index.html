@@ -265,6 +265,105 @@ footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 }
 </style>
 
+
+<style>
+/* Ajuste solicitado: más color + tipografía más grande */
+body{
+  font-size:18px;
+}
+header{
+  background:
+    radial-gradient(circle at 88% 16%, rgba(34,211,197,.34), transparent 30%),
+    radial-gradient(circle at 12% 8%, rgba(20,100,176,.20), transparent 28%),
+    linear-gradient(135deg,#F4F7F8 0%,#E8FBF9 52%,#EAF2FB 100%);
+}
+h1{
+  font-size:clamp(3.4rem,8.8vw,6.8rem);
+}
+h2{
+  font-size:clamp(2.35rem,5vw,3.6rem);
+}
+h3{
+  font-size:1.5rem;
+}
+p,li,details,input,select,textarea{
+  font-size:1.08rem;
+}
+.hero-copy{
+  font-size:1.28rem;
+  line-height:1.75;
+}
+.eyebrow{
+  font-size:1rem;
+}
+.brand{
+  font-size:1.55rem;
+}
+.cta{
+  font-size:1.08rem;
+  padding:15px 22px;
+}
+.card:nth-child(1){
+  background:linear-gradient(145deg,#FFFFFF 0%,#E7FAF7 100%);
+  border-top:5px solid var(--teal);
+}
+.card:nth-child(2){
+  background:linear-gradient(145deg,#FFFFFF 0%,#EAF2FB 100%);
+  border-top:5px solid var(--blue);
+}
+#demo{
+  background:linear-gradient(180deg,#FFFFFF 0%,#EFFBFA 100%);
+}
+#proceso{
+  background:linear-gradient(180deg,#F4F7F8 0%,#EDF5FB 100%);
+}
+.step:nth-child(3n+1){
+  border-top:5px solid var(--teal);
+}
+.step:nth-child(3n+2){
+  border-top:5px solid var(--blue);
+}
+.step:nth-child(3n){
+  border-top:5px solid var(--aqua);
+}
+#inversion .card{
+  background:linear-gradient(145deg,#FFFFFF 0%,#EAF2FB 100%);
+  border-left:6px solid var(--blue);
+}
+#faq{
+  background:linear-gradient(180deg,#F7FCFC 0%,#F4F7F8 100%);
+}
+details:nth-of-type(odd){
+  border-left:5px solid var(--teal);
+}
+details:nth-of-type(even){
+  border-left:5px solid var(--blue);
+}
+#contacto{
+  background:
+    radial-gradient(circle at 90% 20%, rgba(34,211,197,.24), transparent 28%),
+    linear-gradient(135deg,#0A2540 0%,#123B60 100%);
+}
+#contacto h2{
+  font-size:clamp(2.5rem,5vw,3.7rem);
+}
+#contacto p{
+  font-size:1.15rem;
+}
+footer{
+  border-top:4px solid var(--teal);
+}
+@media(max-width:760px){
+  body{font-size:17px}
+  h1{font-size:clamp(3rem,14vw,4.4rem)}
+  h2{font-size:clamp(2.1rem,9vw,2.8rem)}
+  h3{font-size:1.35rem}
+  .hero-copy{font-size:1.16rem}
+  p,li,details,input,select,textarea{font-size:1.03rem}
+  .cta{font-size:1.03rem}
+}
+</style>
+
 </head>
 <body>
 
@@ -590,8 +689,8 @@ function reiniciarDemo(){
 
 <footer>
   <div class="wrap">
-    <span>SantiCorreaIA · Comunicación con claridad</span>
-    <span>Hecho para conversar, probar y mejorar.</span>
+    <span>SantiCorreaIA</span>
+    <span>Tu idea, bien comunicada.</span>
   </div>
 </footer>
 
