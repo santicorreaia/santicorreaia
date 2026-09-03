@@ -5,103 +5,289 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0f1720">
 <title>Santiago Correa | Comunicación audiovisual con IA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet">
+
+
 <style>
 :root{
-  --bg:#0f1720; --panel:#17212b; --panel2:#1c2834; --text:#f5f7fa;
-  --muted:#b8c2cc; --accent:#ff8a1f; --line:#2f3d4a; --ok:#9bd3ae;
-  --shadow:0 10px 28px rgba(0,0,0,.14);
+  --teal:#22D3C5;
+  --aqua:#6EE7E0;
+  --blue:#1464B0;
+  --navy:#0A2540;
+  --ice:#F4F7F8;
+  --white:#FFFFFF;
+  --ink:#17324A;
+  --muted:#5E7386;
+  --line:#DDE8EC;
+  --soft:#EAFBFA;
+  --shadow:0 14px 34px rgba(10,37,64,.10);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);
-  line-height:1.6;-webkit-font-smoothing:antialiased
+  margin:0;
+  font-family:"Inter",Arial,sans-serif;
+  background:var(--ice);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
 .wrap{width:min(92%,1100px);margin:auto}
-header,section{padding:60px 0}
-section{border-top:1px solid var(--line)}
-h1{font-size:clamp(2.35rem,6vw,4.3rem);line-height:1.05;margin:0 0 18px;letter-spacing:-.02em}
-h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.12;margin:0 0 14px}
-h3{margin:0 0 8px}
+.brandbar{
+  position:sticky;top:0;z-index:10;
+  background:rgba(244,247,248,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(20,100,176,.10);
+}
+.brandbar .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  min-height:70px;gap:18px
+}
+.brand{
+  font-family:"Questrial",sans-serif;
+  font-size:1.35rem;
+  color:var(--navy);
+  text-decoration:none;
+  letter-spacing:.01em;
+}
+.brand span{color:var(--teal)}
+.brand-pill{
+  font-size:.85rem;color:var(--blue);
+  border:1px solid #CFE4EB;background:var(--white);
+  border-radius:999px;padding:7px 11px
+}
+header{
+  padding:78px 0 70px;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(34,211,197,.22), transparent 28%),
+    radial-gradient(circle at 10% 10%, rgba(20,100,176,.13), transparent 25%),
+    linear-gradient(180deg,#F8FCFD 0%,var(--ice) 100%);
+}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h1,h2,h3,.eyebrow,.cta,.result-title,summary,strong{
+  font-family:"Questrial",sans-serif;
+}
+h1{
+  color:var(--navy);
+  font-size:clamp(3rem,8vw,6rem);
+  line-height:.98;
+  margin:0 0 22px;
+  letter-spacing:-.035em;
+  max-width:880px
+}
+h2{
+  color:var(--navy);
+  font-size:clamp(2rem,4.5vw,3.15rem);
+  line-height:1.05;
+  margin:0 0 16px;
+  letter-spacing:-.02em
+}
+h3{color:var(--navy);font-size:1.3rem;margin:0 0 8px}
 p{color:var(--muted)}
-.eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
-.card,.demo-shell,.step,.client-box,details{box-shadow:var(--shadow)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:14px 0}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.eyebrow{
+  color:var(--blue);
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:14px
+}
+.hero-copy{
+  max-width:770px;
+  font-size:1.13rem;
+  line-height:1.75;
+  margin-bottom:26px
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 .cta{
-  display:inline-flex;align-items:center;justify-content:center;min-height:46px;
-  background:var(--accent);color:#111;text-decoration:none;font-weight:700;
-  padding:14px 20px;border-radius:10px;border:0;cursor:pointer
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;
+  padding:14px 20px;
+  border-radius:12px;
+  border:0;
+  background:var(--teal);
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:400;
+  cursor:pointer;
+  transition:.18s ease;
+  box-shadow:0 8px 20px rgba(34,211,197,.18)
 }
-.cta.secondary{background:#24313d;color:var(--text);border:1px solid var(--line)}
+.cta:hover{transform:translateY(-1px);filter:saturate(1.05)}
+.cta.secondary{
+  background:var(--white);
+  color:var(--blue);
+  border:1px solid #CFE4EB;
+  box-shadow:none
+}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card,.demo-shell,.step,.client-box,details{
+  background:var(--white);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow)
+}
+.card{
+  border-radius:18px;
+  padding:24px;
+  margin:14px 0
+}
+.card strong{color:var(--navy);font-size:1.15rem}
 ul{padding-left:22px}
-li{margin:10px 0;color:#d7dde3}
-details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
-summary{cursor:pointer;font-weight:700}
+li{margin:10px 0;color:#425F73}
+details{
+  border-radius:14px;
+  padding:17px 19px;
+  margin-bottom:12px
+}
+summary{cursor:pointer;color:var(--navy);font-size:1.03rem}
 
-/* DEMO HÍBRIDA */
-.demo-shell{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:24px}
-.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-label{display:block;font-weight:700;margin:0 0 7px}
+/* DEMO */
+#demo{background:var(--white)}
+.demo-shell{
+  background:linear-gradient(145deg,#FFFFFF 0%,#F0FBFB 100%);
+  border-radius:22px;
+  padding:26px
+}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+label{
+  display:block;
+  font-family:"Questrial",sans-serif;
+  color:var(--navy);
+  margin:0 0 7px
+}
 input,select,textarea{
-  width:100%;background:#0f1720;color:var(--text);border:1px solid #3a4b5a;
-  border-radius:9px;padding:12px 13px;font:inherit;margin-bottom:14px
+  width:100%;
+  border:1px solid #CFE0E7;
+  background:#FBFEFF;
+  color:var(--ink);
+  border-radius:11px;
+  padding:12px 13px;
+  font:inherit;
+  margin-bottom:14px;
+  outline:none
 }
-textarea{min-height:100px;resize:vertical}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--teal);
+  box-shadow:0 0 0 3px rgba(34,211,197,.12)
+}
+textarea{min-height:105px;resize:vertical}
 .output{
-  min-height:360px;background:#0d151d;border:1px dashed #4a5d6e;border-radius:12px;
-  padding:18px;color:#e9eef2
+  min-height:360px;
+  background:var(--navy);
+  border-radius:16px;
+  padding:20px;
+  color:#F6FBFD
 }
-.output.empty{display:flex;align-items:center;justify-content:center;text-align:center;color:#84919d}
+.output.empty{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:#BFD1DB
+}
 .result-block{margin-bottom:18px}
-.result-title{font-weight:700;color:#fff;margin-bottom:5px}
-.result-text{color:#dfe6ec;white-space:pre-wrap}
+.result-title{color:var(--aqua);margin-bottom:5px}
+.result-text{color:#F5FAFC;white-space:pre-wrap}
 .format-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chip{background:#22303c;border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:.9rem;color:#dfe6ec}
+.chip{
+  background:rgba(110,231,224,.12);
+  border:1px solid rgba(110,231,224,.30);
+  color:#DDFBF8;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:.9rem
+}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.small{font-size:.9rem;color:#8f9daa;margin-top:14px}
 .demo-disclaimer{
-  margin-top:16px;padding:12px 14px;background:#121b24;border-left:4px solid var(--accent);
-  border-radius:8px;color:#cbd5dd;font-size:.92rem
+  margin-top:16px;
+  padding:13px 15px;
+  background:var(--soft);
+  border-left:4px solid var(--teal);
+  border-radius:9px;
+  color:#476777;
+  font-size:.92rem
 }
 
-/* PROCESO */
+/* PROCESS */
 .process{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-.step{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;min-height:180px}
-.step-num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#111;font-weight:700;margin-bottom:14px}
-.client-box{margin-top:22px;padding:18px 20px;border:1px solid var(--line);background:#121b24;border-radius:12px}
+.step{
+  border-radius:18px;
+  padding:22px;
+  min-height:190px
+}
+.step-num{
+  width:36px;height:36px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--teal);
+  color:var(--navy);
+  font-family:"Questrial",sans-serif;
+  margin-bottom:14px
+}
+.client-box{
+  margin-top:22px;
+  padding:20px 22px;
+  border-radius:16px;
+  background:#F8FCFD
+}
+#inversion{background:#F9FCFD}
+#contacto{
+  background:var(--navy);
+  text-align:left
+}
+#contacto h2{color:var(--white)}
+#contacto p{color:#C8D8E1;max-width:760px}
+#contacto .cta{background:var(--teal);color:var(--navy)}
+footer{
+  background:#071C31;color:#9CB2BF;
+  padding:26px 0;
+  font-size:.88rem
+}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 
-@media(max-width:900px){.process{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .process{grid-template-columns:1fr 1fr}
+}
 @media(max-width:760px){
+  .brandbar .wrap{min-height:62px}
+  .brand-pill{display:none}
   .wrap{width:100%;padding-left:18px;padding-right:18px}
-  header{padding:34px 0 38px}
-  section{padding:38px 0}
-  h1{font-size:clamp(2rem,10vw,3rem);line-height:1.04}
-  h2{font-size:clamp(1.55rem,7vw,2.1rem)}
-  .eyebrow{font-size:.76rem;line-height:1.35}
+  header{padding:52px 0 46px}
+  section{padding:44px 0}
+  h1{font-size:clamp(2.65rem,13vw,4rem)}
+  h2{font-size:clamp(1.85rem,8vw,2.45rem)}
   .grid,.demo-grid,.process{grid-template-columns:1fr;gap:14px}
-  .card,.demo-shell,.step,.client-box{padding:18px;border-radius:12px}
-  .cta{width:100%;text-align:center;padding:13px 16px}
+  .card,.demo-shell,.step,.client-box{padding:18px}
+  .cta{width:100%;text-align:center}
+  .hero-actions{flex-direction:column}
   input,select,textarea{font-size:16px}
-  .output{min-height:300px}
+  .output{min-height:310px}
   .actions{flex-direction:column}
 }
 </style>
+
 </head>
 <body>
 
-<header>
+
+<div class="brandbar">
+  <div class="wrap">
+    <a class="brand" href="#inicio">SantiCorrea<span>IA</span></a>
+    <div class="brand-pill">Comunicación humana · IA con propósito</div>
+  </div>
+</div>
+
+<header id="inicio">
   <div class="wrap">
     <p class="eyebrow">Comunicación + Inteligencia Artificial</p>
-    <h1>Convierto productos, servicios e ideas de emprendedores y pequeñas empresas en contenido audiovisual listo para publicar.</h1>
-    <p>Soy Santiago Correa, comunicador social y periodista. Creo imágenes, videos, guiones, voces, avatares y adaptaciones para redes sociales según lo que cada negocio necesite comunicar.</p>
+    <h1>Haz que tu negocio se entienda mejor</h1>
+    <p class="hero-copy">Soy Santiago Correa, comunicador social y periodista. Te ayudo a ordenar lo que quieres comunicar y convertirlo en contenido claro y listo para publicar. La inteligencia artificial es una herramienta; la comunicación sigue siendo humana.</p>
     <a class="cta" href="#demo">Probar la demo</a>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <h2>¿Esto es para ti?</h2>
+    <h2>¿Te puedo ayudar?</h2>
     <div class="grid">
       <div class="card">
         <strong>Sí es para ti si:</strong>
@@ -125,8 +311,8 @@ textarea{min-height:100px;resize:vertical}
 
 <section id="demo">
   <div class="wrap">
-    <h2>Demo: convierte una idea en una pieza lista para publicar</h2>
-    <p>Completa cuatro datos. La demo adapta el ejemplo al tipo de negocio, objetivo, público y formato que elijas.</p>
+    <h2>Mira cómo puede tomar forma una idea de tu negocio</h2>
+    <p>Cuéntame lo básico. En segundos verás una muestra de cómo una idea puede convertirse en un mensaje más claro y usable.</p>
 
     <div class="demo-shell">
       <div class="demo-grid">
@@ -400,6 +586,14 @@ function reiniciarDemo(){
   out.textContent='Escribe algunos datos de tu negocio y presiona “Generar ejemplo”.';
 }
 </script>
+
+
+<footer>
+  <div class="wrap">
+    <span>SantiCorreaIA · Comunicación con claridad</span>
+    <span>Hecho para conversar, probar y mejorar.</span>
+  </div>
+</footer>
 
 </body>
 </html>
