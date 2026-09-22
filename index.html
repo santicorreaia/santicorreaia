@@ -3,592 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0f1720">
-<title>Santiago Correa | Comunicación audiovisual con IA</title>
-
+<meta name="theme-color" content="#0A2540">
+<title>Santiago Correa | Comunicación, Contenido, IA y Conferencias</title>
+<meta name="description" content="Santiago Correa ayuda a profesionales, negocios y organizaciones a comunicar mejor, crear contenido, simplificar procesos y desarrollar conferencias y talleres sobre cambio y reconstrucción.">
+<meta property="og:title" content="Santiago Correa | Comunicación, Contenido, IA y Conferencias">
+<meta property="og:description" content="Comunicación, contenido e inteligencia artificial para ordenar ideas, aprovechar conocimiento y simplificar procesos. Conferencia y taller sobre cambio, reconstrucción y rumbo.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  --navy:#0A2540;
+  --blue:#1464B0;
   --teal:#22D3C5;
   --aqua:#6EE7E0;
-  --blue:#1464B0;
-  --navy:#0A2540;
   --ice:#F4F7F8;
   --white:#FFFFFF;
   --ink:#17324A;
   --muted:#5E7386;
   --line:#DDE8EC;
   --soft:#EAFBFA;
-  --shadow:0 14px 34px rgba(10,37,64,.10);
+  --shadow:0 18px 46px rgba(10,37,64,.09);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:"Inter",Arial,sans-serif;
-  background:var(--ice);
-  color:var(--ink);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
+body{margin:0;font-family:"Questrial",sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1120px,92%);margin:auto}
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(10,37,64,.08)
 }
-.wrap{width:min(92%,1100px);margin:auto}
-.brandbar{
-  position:sticky;top:0;z-index:10;
-  background:rgba(244,247,248,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(20,100,176,.10);
-}
-.brandbar .wrap{
-  display:flex;align-items:center;justify-content:space-between;
-  min-height:70px;gap:18px
-}
-.brand{
-  font-family:"Questrial",sans-serif;
-  font-size:1.35rem;
-  color:var(--navy);
-  text-decoration:none;
-  letter-spacing:.01em;
-}
+.nav-in{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:"Space Grotesk",sans-serif;font-weight:700;color:var(--navy);font-size:1.2rem}
 .brand span{color:var(--teal)}
-.brand-pill{
-  font-size:.85rem;color:var(--blue);
-  border:1px solid #CFE4EB;background:var(--white);
-  border-radius:999px;padding:7px 11px
+.links{display:flex;gap:22px;font-size:.94rem;color:var(--muted)}
+.links a:hover{color:var(--blue)}
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#081f36 0%,#0A2540 58%,#123b60 100%);
+  color:white;padding:96px 0 86px
 }
-header{
-  padding:78px 0 70px;
+.hero::before,.hero::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(3px);pointer-events:none
+}
+.hero::before{width:520px;height:520px;right:-160px;top:-180px;background:radial-gradient(circle,rgba(34,211,197,.22),transparent 66%)}
+.hero::after{width:420px;height:420px;left:-200px;bottom:-230px;background:radial-gradient(circle,rgba(20,100,176,.34),transparent 65%)}
+.net{
+  position:absolute;inset:0;opacity:.16;pointer-events:none;
+  background-image:
+    radial-gradient(circle at 20% 30%,var(--aqua) 0 1.2px,transparent 1.5px),
+    radial-gradient(circle at 45% 20%,var(--teal) 0 1.2px,transparent 1.5px),
+    radial-gradient(circle at 62% 52%,var(--aqua) 0 1.2px,transparent 1.5px),
+    radial-gradient(circle at 80% 36%,var(--teal) 0 1.2px,transparent 1.5px),
+    linear-gradient(25deg,transparent 49.7%,rgba(110,231,224,.32) 50%,transparent 50.3%);
+  background-size:220px 180px,280px 240px,310px 250px,260px 210px,360px 280px
+}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.eyebrow{font-family:"Space Grotesk",sans-serif;color:var(--aqua);letter-spacing:.13em;text-transform:uppercase;font-size:.78rem}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-.025em;line-height:1.05}
+h1{font-size:clamp(3rem,7vw,5.7rem);margin:16px 0 20px;max-width:11ch}
+.hero p{color:#D4E2EB;font-size:1.16rem;max-width:650px}
+.hero-mark{
+  aspect-ratio:1;border:1px solid rgba(110,231,224,.22);border-radius:50%;
+  display:grid;place-items:center;position:relative;background:rgba(255,255,255,.03)
+}
+.hero-mark::before,.hero-mark::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(110,231,224,.16)}
+.hero-mark::before{inset:12%}.hero-mark::after{inset:25%}
+.hero-mark strong{font-family:"Space Grotesk";font-size:clamp(3rem,8vw,6rem);color:var(--aqua)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 20px;border-radius:12px;font-family:"Space Grotesk";font-weight:600;transition:.2s ease;border:1px solid transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--teal);color:var(--navy)}
+.btn-ghost{border-color:rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.05)}
+.btn-light{background:var(--white);color:var(--blue);border-color:var(--line)}
+.small-note{font-size:.9rem;color:#9FB5C3;margin-top:14px}
+section{padding:82px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--ice)}
+.section-head{max-width:760px;margin-bottom:36px}
+.section-head .eyebrow{color:var(--blue)}
+h2{font-size:clamp(2.1rem,4.7vw,3.7rem);margin:10px 0 14px;color:var(--navy)}
+h3{font-size:1.28rem;color:var(--navy);margin:0 0 8px}
+p{color:var(--muted);font-size:1.05rem}
+.two{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+.service{border:1px solid var(--line);border-radius:16px;padding:20px;background:linear-gradient(180deg,#fff,#FBFDFE)}
+.service:first-child{border-top:4px solid var(--teal)}
+.service:nth-child(2){border-top:4px solid var(--blue)}
+.service:nth-child(3){border-top:4px solid var(--aqua)}
+.service:nth-child(4){border-top:4px solid #7DA7CE}
+.speaker{background:linear-gradient(160deg,var(--navy),#123b60);color:white}
+.speaker h3,.speaker h2{color:white}
+.speaker p{color:#CBDBE5}
+.speaker .mini{padding:16px 0;border-top:1px solid rgba(255,255,255,.12)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}
+.step{position:relative;background:white;border:1px solid var(--line);border-radius:16px;padding:20px;min-height:150px}
+.step b{display:block;color:var(--blue);font-family:"Space Grotesk";font-size:.83rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:1.4rem;z-index:2}
+.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.example{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;transition:.22s ease}
+.example:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#C8E5E2}
+.arrow{font-family:"Space Grotesk";color:var(--teal);font-size:1.35rem;margin:14px 0}
+.about{display:grid;grid-template-columns:.7fr 1.3fr;gap:34px;align-items:start}
+.portrait{
+  min-height:360px;border-radius:22px;
   background:
-    radial-gradient(circle at 88% 16%, rgba(34,211,197,.22), transparent 28%),
-    radial-gradient(circle at 10% 10%, rgba(20,100,176,.13), transparent 25%),
-    linear-gradient(180deg,#F8FCFD 0%,var(--ice) 100%);
+    linear-gradient(145deg,rgba(34,211,197,.15),rgba(20,100,176,.12)),
+    var(--navy);
+  display:grid;place-items:center;color:var(--aqua);font-family:"Space Grotesk";
+  font-size:4rem;border:1px solid rgba(34,211,197,.25)
 }
-section{padding:64px 0;border-top:1px solid var(--line)}
-h1,h2,h3,.eyebrow,.cta,.result-title,summary,strong{
-  font-family:"Questrial",sans-serif;
+.contact{background:var(--navy);color:white}
+.contact h2{color:white}
+.contact p{color:#C7D8E3}
+.contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}
+.faq details{border-top:1px solid rgba(255,255,255,.15);padding:16px 0}
+.faq summary{cursor:pointer;font-family:"Space Grotesk";color:white}
+.faq p{margin:10px 0 0}
+footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
+@media(max-width:850px){
+  .links{display:none}
+  .hero-grid,.two,.about,.contact-grid{grid-template-columns:1fr}
+  .hero-mark{max-width:300px}
+  .services{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .step:not(:last-child)::after{display:none}
+  .examples{grid-template-columns:1fr}
 }
-h1{
-  color:var(--navy);
-  font-size:clamp(3rem,8vw,6rem);
-  line-height:.98;
-  margin:0 0 22px;
-  letter-spacing:-.035em;
-  max-width:880px
-}
-h2{
-  color:var(--navy);
-  font-size:clamp(2rem,4.5vw,3.15rem);
-  line-height:1.05;
-  margin:0 0 16px;
-  letter-spacing:-.02em
-}
-h3{color:var(--navy);font-size:1.3rem;margin:0 0 8px}
-p{color:var(--muted)}
-.eyebrow{
-  color:var(--blue);
-  font-size:.9rem;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  margin-bottom:14px
-}
-.hero-copy{
-  max-width:770px;
-  font-size:1.13rem;
-  line-height:1.75;
-  margin-bottom:26px
-}
-.cta{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:48px;
-  padding:14px 20px;
-  border-radius:12px;
-  border:0;
-  background:var(--teal);
-  color:var(--navy);
-  text-decoration:none;
-  font-weight:400;
-  cursor:pointer;
-  transition:.18s ease;
-  box-shadow:0 8px 20px rgba(34,211,197,.18)
-}
-.cta:hover{transform:translateY(-1px);filter:saturate(1.05)}
-.cta.secondary{
-  background:var(--white);
-  color:var(--blue);
-  border:1px solid #CFE4EB;
-  box-shadow:none
-}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.card,.demo-shell,.step,.client-box,details{
-  background:var(--white);
-  border:1px solid var(--line);
-  box-shadow:var(--shadow)
-}
-.card{
-  border-radius:18px;
-  padding:24px;
-  margin:14px 0
-}
-.card strong{color:var(--navy);font-size:1.15rem}
-ul{padding-left:22px}
-li{margin:10px 0;color:#425F73}
-details{
-  border-radius:14px;
-  padding:17px 19px;
-  margin-bottom:12px
-}
-summary{cursor:pointer;color:var(--navy);font-size:1.03rem}
-
-#demo{background:var(--white)}
-.demo-shell{
-  background:linear-gradient(145deg,#FFFFFF 0%,#F0FBFB 100%);
-  border-radius:22px;
-  padding:26px
-}
-.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-label{
-  display:block;
-  font-family:"Questrial",sans-serif;
-  color:var(--navy);
-  margin:0 0 7px
-}
-input,select,textarea{
-  width:100%;
-  border:1px solid #CFE0E7;
-  background:#FBFEFF;
-  color:var(--ink);
-  border-radius:11px;
-  padding:12px 13px;
-  font:inherit;
-  margin-bottom:14px;
-  outline:none
-}
-input:focus,select:focus,textarea:focus{
-  border-color:var(--teal);
-  box-shadow:0 0 0 3px rgba(34,211,197,.12)
-}
-textarea{min-height:105px;resize:vertical}
-.output{
-  min-height:360px;
-  background:var(--navy);
-  border-radius:16px;
-  padding:20px;
-  color:#F6FBFD
-}
-.output.empty{
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  color:#BFD1DB
-}
-.result-block{margin-bottom:18px}
-.result-title{color:var(--aqua);margin-bottom:5px}
-.result-text{color:#F5FAFC;white-space:pre-wrap}
-.format-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chip{
-  background:rgba(110,231,224,.12);
-  border:1px solid rgba(110,231,224,.30);
-  color:#DDFBF8;
-  padding:7px 10px;
-  border-radius:999px;
-  font-size:.9rem
-}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.demo-disclaimer{
-  margin-top:16px;
-  padding:13px 15px;
-  background:var(--soft);
-  border-left:4px solid var(--teal);
-  border-radius:9px;
-  color:#476777;
-  font-size:.92rem
-}
-.process{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-.step{
-  border-radius:18px;
-  padding:22px;
-  min-height:190px
-}
-.step-num{
-  width:36px;height:36px;
-  border-radius:50%;
-  display:grid;place-items:center;
-  background:var(--teal);
-  color:var(--navy);
-  font-family:"Questrial",sans-serif;
-  margin-bottom:14px
-}
-.client-box{
-  margin-top:22px;
-  padding:20px 22px;
-  border-radius:16px;
-  background:#F8FCFD
-}
-#inversion{background:#F9FCFD}
-#contacto{
-  background:var(--navy);
-  text-align:left
-}
-#contacto h2{color:var(--white)}
-#contacto p{color:#C8D8E1;max-width:760px}
-#contacto .cta{background:var(--teal);color:var(--navy)}
-footer{
-  background:#071C31;color:#9CB2BF;
-  padding:26px 0;
-  font-size:.88rem
-}
-footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-
-body{font-size:18px}
-header{
-  background:
-    radial-gradient(circle at 88% 16%, rgba(34,211,197,.34), transparent 30%),
-    radial-gradient(circle at 12% 8%, rgba(20,100,176,.20), transparent 28%),
-    linear-gradient(135deg,#F4F7F8 0%,#E8FBF9 52%,#EAF2FB 100%);
-}
-h1{font-size:clamp(3.4rem,8.8vw,6.8rem)}
-h2{font-size:clamp(2.35rem,5vw,3.6rem)}
-h3{font-size:1.5rem}
-p,li,details,input,select,textarea{font-size:1.08rem}
-.hero-copy{font-size:1.28rem;line-height:1.75}
-.eyebrow{font-size:1rem}
-.brand{font-size:1.55rem}
-.cta{font-size:1.08rem;padding:15px 22px}
-.card:nth-child(1){
-  background:linear-gradient(145deg,#FFFFFF 0%,#E7FAF7 100%);
-  border-top:5px solid var(--teal);
-}
-.card:nth-child(2){
-  background:linear-gradient(145deg,#FFFFFF 0%,#EAF2FB 100%);
-  border-top:5px solid var(--blue);
-}
-#demo{background:linear-gradient(180deg,#FFFFFF 0%,#EFFBFA 100%)}
-#ia{background:linear-gradient(180deg,#F7FCFC 0%,#EEF8FB 100%)}
-#ia .card{
-  background:linear-gradient(145deg,#FFFFFF 0%,#E7FAF7 100%);
-  border-left:6px solid var(--teal);
-}
-#proceso{background:linear-gradient(180deg,#F4F7F8 0%,#EDF5FB 100%)}
-.step:nth-child(3n+1){border-top:5px solid var(--teal)}
-.step:nth-child(3n+2){border-top:5px solid var(--blue)}
-.step:nth-child(3n){border-top:5px solid var(--aqua)}
-#inversion .card{
-  background:linear-gradient(145deg,#FFFFFF 0%,#EAF2FB 100%);
-  border-left:6px solid var(--blue);
-}
-#faq{background:linear-gradient(180deg,#F7FCFC 0%,#F4F7F8 100%)}
-details:nth-of-type(odd){border-left:5px solid var(--teal)}
-details:nth-of-type(even){border-left:5px solid var(--blue)}
-#contacto{
-  background:
-    radial-gradient(circle at 90% 20%, rgba(34,211,197,.24), transparent 28%),
-    linear-gradient(135deg,#0A2540 0%,#123B60 100%);
-}
-#contacto h2{font-size:clamp(2.5rem,5vw,3.7rem)}
-#contacto p{font-size:1.15rem}
-footer{border-top:4px solid var(--teal)}
-
-@media(max-width:900px){
-  .process{grid-template-columns:1fr 1fr}
-}
-@media(max-width:760px){
-  .brandbar .wrap{min-height:62px}
-  .brand-pill{display:none}
-  .wrap{width:100%;padding-left:18px;padding-right:18px}
-  header{padding:52px 0 46px}
-  section{padding:44px 0}
-  body{font-size:17px}
-  h1{font-size:clamp(3rem,14vw,4.4rem)}
-  h2{font-size:clamp(2.1rem,9vw,2.8rem)}
-  h3{font-size:1.35rem}
-  .hero-copy{font-size:1.16rem}
-  p,li,details,input,select,textarea{font-size:1.03rem}
-  .grid,.demo-grid,.process{grid-template-columns:1fr;gap:14px}
-  .card,.demo-shell,.step,.client-box{padding:18px}
-  .cta{width:100%;text-align:center;font-size:1.03rem}
-  input,select,textarea{font-size:16px}
-  .output{min-height:310px}
-  .actions{flex-direction:column}
+@media(max-width:540px){
+  .hero{padding:72px 0 60px}
+  section{padding:62px 0}
+  .flow{grid-template-columns:1fr}
+  .actions .btn{width:100%}
 }
 </style>
 </head>
 <body>
 
-<div class="brandbar">
-  <div class="wrap">
+<nav class="nav">
+  <div class="wrap nav-in">
     <a class="brand" href="#inicio">SantiCorrea<span>IA</span></a>
-    <div class="brand-pill">Comunicación humana · IA con propósito</div>
+    <div class="links">
+      <a href="#ayuda">Cómo ayudo</a>
+      <a href="#trabajo">R4</a>
+      <a href="#ejemplos">Casos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Hablemos</a>
+    </div>
   </div>
-</div>
+</nav>
 
-<header id="inicio">
-  <div class="wrap">
- <p class="eyebrow">Comunicación + Contenido + IA</p>
-    <h1>Haz que tu negocio se entienda mejor</h1>
-    <p class="hero-copy">Soy Santiago Correa, comunicador social y periodista. Te ayudo a ordenar lo que quieres comunicar y convertirlo en contenido claro y listo para publicar. La inteligencia artificial es una herramienta; la comunicación sigue siendo humana.</p>
-    <a class="cta" href="#demo">Probar la demo</a>
+<header class="hero" id="inicio">
+  <div class="net"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Comunicación · Contenido · IA</div>
+      <h1>Tu idea, bien comunicada</h1>
+      <p>Ayudo a profesionales, negocios y organizaciones a ordenar sus ideas, comunicar mejor lo que hacen y simplificar procesos que hoy les quitan tiempo.</p>
+      <p>También desarrollo una conferencia y un taller sobre cambio, reconstrucción y rumbo.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#contacto">Hablemos de tu negocio</a>
+        <a class="btn btn-ghost" href="#ayuda">Conferencia y taller</a>
+      </div>
+      <div class="small-note">Conversación inicial de 30 minutos · WhatsApp</div>
+    </div>
+    <div class="hero-mark" aria-label="Santiago Correa"><strong>SC</strong></div>
   </div>
 </header>
 
-<section>
+<section id="ayuda">
   <div class="wrap">
-    <h2>¿Te puedo ayudar?</h2>
-    <div class="grid">
-      <div class="card">
-        <strong>Sí es para ti si:</strong>
-        <ul>
-          <li>Tienes un producto, servicio o idea que necesitas mostrar mejor.</li>
-          <li>Quieres producir contenido con mayor frecuencia, pero no tienes tiempo o equipo para hacerlo.</li>
-          <li>Necesitas convertir una idea en imágenes, videos, guiones o piezas listas para publicar.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <strong>No es para ti si:</strong>
-        <ul>
-          <li>Esperas que la inteligencia artificial haga todo automáticamente sin aportar información de tu negocio.</li>
-          <li>Buscas resultados de ventas garantizados solo por publicar contenido.</li>
-          <li>Quieres producir contenido sin tener claro qué ofreces o a quién quieres llegar.</li>
-        </ul>
-      </div>
+    <div class="section-head">
+      <div class="eyebrow">Cómo puedo ayudarte</div>
+      <h2>Cómo puedo ayudarte</h2>
+      <p>No parto de una herramienta. Parto de lo que necesitas explicar, crear, ordenar o mejorar.</p>
     </div>
-  </div>
-</section>
 
-<section id="demo">
-  <div class="wrap">
-    <h2>Mira cómo puede tomar forma una idea de tu negocio</h2>
-    <p>Cuéntame lo básico. En segundos verás una muestra de cómo una idea puede convertirse en un mensaje más claro y usable.</p>
-
-    <div class="demo-shell">
-      <div class="demo-grid">
-        <div>
-          <label for="negocio">¿Qué tipo de negocio tienes?</label>
-          <input id="negocio" placeholder="Ej.: consultorio psicológico, tienda de ropa, estudio contable">
-
-          <label for="oferta">¿Qué quieres promocionar o comunicar?</label>
-          <input id="oferta" placeholder="Ej.: asesoría para declarar impuestos, nueva colección, consulta inicial">
-
-          <label for="publico">¿A quién quieres llegar?</label>
-          <input id="publico" placeholder="Ej.: profesionales independientes, mujeres de 30 a 45 años">
-
-          <label for="objetivo">¿Qué quieres que haga esa persona?</label>
-          <select id="objetivo">
-            <option value="consultar">Que pregunte o escriba</option>
-            <option value="agendar">Que agende una reunión o cita</option>
-            <option value="comprar">Que compre o haga un pedido</option>
-            <option value="conocer">Que conozca mejor el producto o servicio</option>
-          </select>
-
-          <label for="formato">Formato</label>
-          <select id="formato">
-            <option value="instagram">Post de Instagram</option>
-            <option value="reel">Guion corto para Reel</option>
-            <option value="whatsapp">Mensaje de WhatsApp</option>
-            <option value="linkedin">Post de LinkedIn</option>
-          </select>
-
-          <label for="detalle">Dato que no debería faltar</label>
-          <textarea id="detalle" placeholder="Ej.: atención virtual, entrega el mismo día, 15 años de experiencia, cupos limitados"></textarea>
-
-          <button class="cta" onclick="generarDemo()">Generar ejemplo</button>
-        </div>
-
-        <div>
-          <label>Resultado</label>
-          <div id="resultado" class="output empty">
-            Escribe algunos datos de tu negocio y presiona “Generar ejemplo”.
-          </div>
-          <div class="actions">
-            <button class="cta secondary" onclick="copiarResultado()">Copiar resultado</button>
-            <button class="cta secondary" onclick="reiniciarDemo()">Reiniciar demo</button>
-          </div>
-          <div class="demo-disclaimer">
-            Demo ilustrativa. La versión para clientes se adapta con IA al negocio, al objetivo y al contenido real.
-          </div>
+    <div class="two">
+      <div class="panel">
+        <h3>Comunicación + Contenido + IA</h3>
+        <div class="services">
+          <div class="service"><h3>Comunicación</h3><p>Aclaro el mensaje, ordeno la estructura y ajusto el tono para que lo que haces se entienda mejor.</p></div>
+          <div class="service"><h3>Contenido</h3><p>Convierto ideas, entrevistas, clases o documentos en piezas útiles para publicar.</p></div>
+          <div class="service"><h3>Video</h3><p>Trabajo desde la idea y el guion hasta la edición final.</p></div>
+          <div class="service"><h3>Procesos</h3><p>Reviso tareas repetitivas y flujos que podrían hacerse de una forma más simple.</p></div>
         </div>
       </div>
+
+      <div class="panel speaker">
+        <div class="eyebrow">Conferencia + Taller</div>
+        <div class="mini">
+          <h3>Después del quiebre</h3>
+          <p>Una conferencia sobre cambio, reconstrucción y rumbo.</p>
+        </div>
+        <div class="mini">
+          <h3>Método R4</h3>
+          <p>Un taller práctico para llevar esa conversación a decisiones concretas.</p>
+        </div>
+        <a class="btn btn-primary" href="#contacto">Consultar conferencia y taller</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="ia">
+<section class="alt" id="trabajo">
   <div class="wrap">
-    <h2>¿Dónde entra la inteligencia artificial?</h2>
-    <div class="card">
-      <p>La uso para ayudarte a convertir información, ideas y tareas repetitivas en soluciones concretas: contenido, guiones, propuestas, respuestas, organización de información o procesos simples.</p>
-      <p>Primero entendemos qué necesitas. Después vemos si la IA realmente tiene sentido para resolverlo y cómo usarla sin perder la claridad ni la voz de tu negocio.</p>
+    <div class="section-head">
+      <div class="eyebrow">Cómo trabajo</div>
+      <h2>Primero, entender</h2>
+      <p>Primero, entender. Trabajo con el Método R4 para ordenar el problema antes de actuar.</p>
+    </div>
+
+    <div class="flow">
+      <div class="step"><b>R1 · Reconocer</b><h3>¿Qué está pasando realmente?</h3><p>Entendemos qué cambió, qué no funciona y dónde aparece la fricción.</p></div>
+      <div class="step"><b>R2 · Rescatar</b><h3>¿Con qué contamos hoy?</h3><p>Revisamos lo que ya existe, funciona y puede aprovecharse.</p></div>
+      <div class="step"><b>R3 · Redefinir</b><h3>¿Qué queremos conseguir ahora?</h3><p>Definimos hacia dónde vale la pena ir con la realidad y los recursos actuales.</p></div>
+      <div class="step"><b>R4 · Actuar</b><h3>¿Cuál es el siguiente paso?</h3><p>Convertimos la claridad en una acción concreta: contenido, video, mejora de proceso o automatización.</p></div>
+    </div>
+
+    <a class="btn btn-light" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Quiero%20agendar%20una%20conversaci%C3%B3n%20de%2030%20minutos%20para%20contarte%20qu%C3%A9%20est%C3%A1%20pasando%20en%20mi%20negocio." target="_blank" rel="noopener">Agendar conversación de 30 minutos</a>
+  </div>
+</section>
+
+<section id="ejemplos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ejemplos</div>
+      <h2>Mira lo que puede cambiar</h2>
+      <p>Tres ejemplos concretos de cómo una necesidad puede convertirse en algo más claro y útil.</p>
+    </div>
+
+    <div class="examples">
+      <article class="example">
+        <h3>Una conversación</h3>
+        <p>Una entrevista o reunión.</p>
+        <div class="arrow">↓</div>
+        <h3>Contenido</h3>
+        <p>Puede convertirse en varias piezas útiles para publicar.</p>
+      </article>
+
+      <article class="example">
+        <h3>Una idea</h3>
+        <p>Algo que quieres decir, pero aún está desordenado.</p>
+        <div class="arrow">↓</div>
+        <h3>Video</h3>
+        <p>Ordenamos el mensaje, construimos el guion y lo llevamos a una pieza editada.</p>
+      </article>
+
+      <article class="example">
+        <h3>Una tarea repetitiva</h3>
+        <p>Responder lo mismo, buscar información o repetir pasos manuales.</p>
+        <div class="arrow">↓</div>
+        <h3>Un proceso más simple</h3>
+        <p>Primero revisamos el flujo. Después decidimos si vale la pena automatizarlo.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="proceso">
-  <div class="wrap">
-    <h2>Cómo trabajo</h2>
-    <p>Primero ves una demo y entiendes qué se puede hacer. Si tiene sentido para tu negocio, seguimos este camino:</p>
-    <div class="process">
-      <div class="step"><div class="step-num">1</div><h3>Reunión de 20 minutos</h3><p>Entiendo qué quieres comunicar, a quién quieres llegar y cuál es el problema concreto que necesitas resolver.</p></div>
-      <div class="step"><div class="step-num">2</div><h3>Demo adaptada a tu negocio</h3><p>Te muestro una versión aplicada a tu caso. La ves antes de hablar de inversión.</p></div>
-      <div class="step"><div class="step-num">3</div><h3>Alcance por escrito</h3><p>Definimos qué incluye el trabajo, qué no incluye, qué necesito de ti y qué vas a recibir.</p></div>
-      <div class="step"><div class="step-num">4</div><h3>Construcción</h3><p>Desarrollo el proyecto en el plazo acordado. Según el alcance, puede ser de 7, 14 o 30 días.</p></div>
-      <div class="step"><div class="step-num">5</div><h3>Entrega y ajuste</h3><p>Recibes el material acordado, revisamos juntos el resultado y hacemos un ajuste final si hace falta.</p></div>
-      <div class="step"><div class="step-num">6</div><h3>¿Qué sigue después?</h3><p>Definimos si el trabajo termina ahí o si conviene continuar con nuevas piezas, adaptaciones o acompañamiento.</p></div>
-    </div>
-    <div class="client-box">
-      <strong>¿Qué necesitas poner tú?</strong>
-      <p>La información o accesos necesarios para trabajar y, cuando el proyecto lo requiera, una reunión semanal breve para revisar avances.</p>
+<section class="alt" id="sobre-mi">
+  <div class="wrap about">
+    <div class="portrait" aria-label="Espacio para fotografía de Santiago Correa">SC</div>
+    <div>
+      <div class="eyebrow">Sobre mí</div>
+      <h2>Santiago Correa</h2>
+      <p>Soy comunicador social y periodista. He trabajado en comunicación institucional, contenido, producción audiovisual y proyectos de formación.</p>
+      <p>Hoy combino esa experiencia con herramientas de inteligencia artificial para ayudar a profesionales, negocios y organizaciones a comunicar mejor, aprovechar lo que ya saben y simplificar procesos.</p>
+      <p>En 2008 sufrí un aneurisma cerebral que produjo un ACV hemorrágico. Permanecí 27 horas inconsciente y tuve que recuperar capacidades que antes daba por hechas.</p>
+      <p>Esa experiencia también dio origen a mi trabajo como conferencista y al Método R4: Reconocer, Rescatar, Redefinir y Actuar.</p>
     </div>
   </div>
 </section>
 
-<section id="inversion">
-  <div class="wrap">
-    <h2>¿Cómo se arma la inversión?</h2>
-    <div class="card">
-      <p>Primero ves una demo aplicada a un caso concreto. No cotizo una idea en el aire: el presupuesto se arma cuando ya está claro qué necesitas y qué resultado vamos a construir.</p>
-      <p>La inversión cambia según el alcance, la cantidad de piezas, los formatos, los canales donde se va a usar el contenido, el plazo de entrega y la información o accesos que tengas que aportar.</p>
-      <p>También definimos por escrito qué incluye el proyecto y qué queda por fuera. Si después aparecen nuevas piezas, más canales o cambios que no estaban contemplados, se cotizan aparte antes de hacerlos.</p>
-      <p>No publico precios, rangos ni valores “desde”. Primero ves la demo y luego, en una conversación de 20 minutos, revisamos tu caso y te paso una propuesta concreta.</p>
-      <a class="cta" href="#contacto">Mira la demo y agenda 20 minutos para revisar la inversión</a>
+<section class="contact" id="contacto">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Hablemos</div>
+      <h2>Hablemos</h2>
+      <p>Antes de pensar en herramientas, cuéntame qué está pasando. Podemos empezar con una conversación de 30 minutos para entender el contexto y ver si tiene sentido trabajar juntos.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Quiero%20agendar%20una%20conversaci%C3%B3n%20de%2030%20minutos." target="_blank" rel="noopener">Pedir reunión de 30 minutos</a>
+        <a class="btn btn-ghost" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20contarte%20mi%20caso." target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="faq">
+      <details><summary>¿Necesito saber exactamente qué solución quiero?</summary><p>No. Podemos empezar por entender el problema.</p></details>
+      <details><summary>¿Trabajas solo con inteligencia artificial?</summary><p>No. La IA es una herramienta dentro del proceso.</p></details>
+      <details><summary>¿Puedes ayudarme con videos?</summary><p>Sí. Desde la idea y el guion hasta la edición de la pieza.</p></details>
+      <details><summary>¿La conferencia se adapta a diferentes públicos?</summary><p>Sí. La estructura central se mantiene y el enfoque se ajusta al contexto de la organización.</p></details>
     </div>
   </div>
 </section>
-
-<section id="faq">
-  <div class="wrap">
-    <h2>Preguntas frecuentes</h2>
-    <details><summary>¿Cuánto sale?</summary><p>Lo vemos después de que veas la demo. Primero necesito entender qué necesitas y qué alcance tendría el trabajo. En la reunión de 20 minutos revisamos tu caso y te paso una propuesta concreta.</p></details>
-    <details><summary>¿Me puedes pasar el precio por aquí y después vemos?</summary><p>Prefiero no darte un número sin contexto. Si te paso un precio antes de que veas qué incluye, probablemente estemos hablando de cosas distintas. Mira la demo y, si tiene sentido para ti, coordinamos una reunión breve.</p></details>
-    <details><summary>¿Cuánto tiempo tarda?</summary><p>Depende del alcance. Los proyectos se organizan según lo que haya que producir y adaptar. Antes de empezar dejamos por escrito qué se entrega y en qué plazo.</p></details>
-    <details><summary>No sé si esto sirve para un negocio como el mío.</summary><p>La forma más fácil de saberlo es ver un ejemplo aplicado a un caso concreto. La demo te muestra cómo trabajo y, si tu necesidad es distinta, en la reunión revisamos si realmente tiene sentido adaptarlo a tu negocio.</p></details>
-    <details><summary>¿Y si no funciona?</summary><p>No prometo ventas ni resultados automáticos. Lo que sí dejamos claro antes de empezar es qué se va a construir, qué vas a recibir y qué problema de comunicación buscamos resolver.</p></details>
-    <details><summary>¿Después me quedo dependiendo de ti para todo?</summary><p>No necesariamente. Definimos desde el principio qué recibes y qué puedes usar por tu cuenta. Si después quieres nuevas piezas, adaptaciones o acompañamiento, se acuerda aparte.</p></details>
-    <details><summary>¿Tengo que saber usar inteligencia artificial?</summary><p>No. Yo me encargo de las herramientas y del proceso de producción. Tú aportas la información del negocio y revisamos juntos lo que haga falta.</p></details>
-    <details><summary>¿Qué necesitas de mí para empezar?</summary><p>Información clara sobre tu producto, servicio o idea, los materiales que ya tengas y los accesos que sean necesarios para el proyecto. Si hace falta, hacemos una reunión breve para ordenar todo.</p></details>
-  </div>
-</section>
-
-<section id="contacto">
-  <div class="wrap">
-    <h2>Muéstrame qué necesitas comunicar</h2>
-    <p>Agendemos una conversación de 20 minutos para conocer tu negocio, revisar qué tipo de contenido podríamos producir y ver si tiene sentido trabajar juntos.</p>
-    <a class="cta" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Vi%20la%20demo%20de%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20mi%20negocio." target="_blank" rel="noopener noreferrer">Agendar una reunión de 20 minutos por WhatsApp</a>
-  </div>
-</section>
-
-<script>
-const verbos = {
-  consultar: {cta:"Escríbenos y te contamos cómo funciona.",accion:"escribir o consultar"},
-  agendar: {cta:"Agenda una conversación y revisamos tu caso.",accion:"agendar una reunión o cita"},
-  comprar: {cta:"Escríbenos para confirmar disponibilidad y hacer tu pedido.",accion:"comprar o hacer un pedido"},
-  conocer: {cta:"Si quieres conocer más, escríbenos y te mostramos cómo funciona.",accion:"conocer mejor la propuesta"}
-};
-
-function limpiarFrase(texto){
-  return texto.trim().replace(/\s+/g,' ').replace(/[.]+$/,'');
-}
-function articuloNegocio(){ return 'En'; }
-
-function ganchoSegunObjetivo(oferta, objetivo, publico){
-  const o = oferta.toLowerCase();
-  const p = publico ? ` si eres ${publico}` : '';
-  if(objetivo === 'agendar') return `¿Buscas ${o}${p}?`;
-  if(objetivo === 'comprar') return `¿Necesitas ${o}${p}?`;
-  if(objetivo === 'conocer') return `Hay una forma más clara de conocer ${o}.`;
-  return `¿Quieres saber si ${o} puede servirte${p}?`;
-}
-
-function textoBase(negocio, oferta, publico, detalle, objetivo){
-  const publicoTxt = publico ? ` para ${publico}` : '';
-  const detalleTxt = detalle ? ` ${detalle}.` : '';
-  const accion = verbos[objetivo].accion;
-  return `${articuloNegocio()} ${negocio} trabajamos ${oferta.toLowerCase()}${publicoTxt}. La idea es que entiendas qué obtienes, cómo funciona y qué necesitas antes de ${accion}.${detalleTxt}`;
-}
-
-function adaptarFormato(formato, gancho, cuerpo, cta){
-  if(formato === 'reel') return {gancho,texto:`GANCHO:\n${gancho}\n\nDESARROLLO:\n${cuerpo}\n\nCTA:\n${cta}`,formatos:["Reel","Historia","Short"]};
-  if(formato === 'whatsapp') return {gancho,texto:`Hola 👋\n\n${gancho}\n\n${cuerpo}\n\n${cta}`,formatos:["WhatsApp","Respuesta rápida","Seguimiento"]};
-  if(formato === 'linkedin') return {gancho,texto:`${gancho}\n\n${cuerpo}\n\n${cta}`,formatos:["LinkedIn","Carrusel","Artículo corto"]};
-  return {gancho,texto:`${gancho}\n\n${cuerpo}\n\n${cta}`,formatos:["Instagram","Historia","Carrusel"]};
-}
-
-function generarDemo(){
-  const negocio = limpiarFrase(document.getElementById('negocio').value);
-  const oferta = limpiarFrase(document.getElementById('oferta').value);
-  const publico = limpiarFrase(document.getElementById('publico').value);
-  const objetivo = document.getElementById('objetivo').value;
-  const formato = document.getElementById('formato').value;
-  const detalle = limpiarFrase(document.getElementById('detalle').value);
-  const out = document.getElementById('resultado');
-
-  if(!negocio || !oferta){
-    out.classList.remove('empty');
-    out.innerHTML = '<div class="result-text">Para generar un ejemplo necesito, al menos, el tipo de negocio y qué quieres comunicar.</div>';
-    return;
-  }
-
-  const gancho = ganchoSegunObjetivo(oferta, objetivo, publico);
-  const cuerpo = textoBase(negocio, oferta, publico, detalle, objetivo);
-  const cta = verbos[objetivo].cta;
-  const resultado = adaptarFormato(formato, gancho, cuerpo, cta);
-
-  out.classList.remove('empty');
-  out.innerHTML = '';
-
-  [['Gancho',resultado.gancho],['Pieza sugerida',resultado.texto],['CTA',cta]].forEach(([titulo,texto])=>{
-    const block=document.createElement('div');
-    block.className='result-block';
-    const t=document.createElement('div');
-    t.className='result-title';
-    t.textContent=titulo;
-    const c=document.createElement('div');
-    c.className='result-text';
-    c.textContent=texto;
-    block.appendChild(t);
-    block.appendChild(c);
-    out.appendChild(block);
-  });
-
-  const title=document.createElement('div');
-  title.className='result-title';
-  title.textContent='También puede adaptarse a';
-  out.appendChild(title);
-
-  const chips=document.createElement('div');
-  chips.className='format-chips';
-  resultado.formatos.forEach(f=>{
-    const chip=document.createElement('span');
-    chip.className='chip';
-    chip.textContent=f;
-    chips.appendChild(chip);
-  });
-  out.appendChild(chips);
-}
-
-function copiarResultado(){
-  const out=document.getElementById('resultado');
-  if(out.classList.contains('empty')) return;
-  navigator.clipboard.writeText(out.innerText).then(()=>alert('Resultado copiado.'));
-}
-
-function reiniciarDemo(){
-  document.getElementById('negocio').value='';
-  document.getElementById('oferta').value='';
-  document.getElementById('publico').value='';
-  document.getElementById('detalle').value='';
-  document.getElementById('objetivo').value='consultar';
-  document.getElementById('formato').value='instagram';
-  const out=document.getElementById('resultado');
-  out.className='output empty';
-  out.textContent='Escribe algunos datos de tu negocio y presiona “Generar ejemplo”.';
-}
-</script>
 
 <footer>
-  <div class="wrap">
-    <span>SantiCorreaIA</span>
-    <span>Tu idea, bien comunicada.</span>
-  </div>
+  <div class="wrap">© 2026 Santiago Correa · Comunicación + Contenido + IA · Conferencia + Taller</div>
 </footer>
 
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
 </body>
 </html>
