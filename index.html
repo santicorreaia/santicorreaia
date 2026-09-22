@@ -217,7 +217,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
       </div>
       <div class="small-note">Conversación inicial de 30 minutos · WhatsApp</div>
     </div>
-    <div class="hero-photo reveal"><img src="assets/santiago-correa-hero.jpg" width="900" height="1125" alt="Santiago Correa, comunicador y consultor" loading="eager" decoding="async"></div>
+    <div class="hero-photo reveal"><img data-photo="hero" alt="Santiago Correa, comunicador y consultor" loading="eager" decoding="async"></div>
   </div>
 </header>
 
@@ -421,7 +421,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 
 <section id="sobre-mi">
   <div class="wrap about reveal">
-    <div class="portrait reveal"><img src="assets/santiago-correa-sobre-mi.jpg" width="900" height="1125" alt="Santiago Correa" loading="lazy" decoding="async"></div>
+    <div class="portrait reveal"><img data-photo="about" alt="Santiago Correa" loading="lazy" decoding="async"></div>
     <div>
       <div class="eyebrow">Sobre mí</div>
       <h2>Santiago Correa</h2>
@@ -461,6 +461,25 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 </footer>
 
 <script>
+
+async function loadPhoto(selector,path){
+  const img=document.querySelector(selector);
+  if(!img) return;
+  try{
+    const r=await fetch(path,{cache:'no-store'});
+    if(!r.ok) throw new Error('No se pudo cargar '+path);
+    const b64=(await r.text()).replace(/\s+/g,'');
+    const bin=atob(b64);
+    const bytes=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+    const url=URL.createObjectURL(new Blob([bytes],{type:'image/webp'}));
+    img.onload=()=>URL.revokeObjectURL(url);
+    img.src=url;
+  }catch(e){console.error(e);}
+}
+loadPhoto('[data-photo="hero"]','assets/photo-hero.b64');
+loadPhoto('[data-photo="about"]','assets/photo-about.b64');
+
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     const t=document.querySelector(a.getAttribute('href'));
