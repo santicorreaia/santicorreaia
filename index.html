@@ -87,7 +87,9 @@ h1{font-size:clamp(3rem,7vw,5.7rem);margin:16px 0 20px;max-width:11ch}
 .small-note{font-size:.9rem;color:#9FB5C3;margin-top:14px}
 section{padding:82px 0;border-top:1px solid var(--line)}
 section.alt{background:var(--ice)}
-section.dark-section{background:linear-gradient(145deg,#081f36 0%,#0A2540 62%,#123b60 100%);color:white;border-top-color:rgba(255,255,255,.08)}
+section.dark-section{background:linear-gradient(145deg,#081f36 0%,#0A2540 62%,#123b60 100%);color:white;border-top-color:rgba(255,255,255,.08);position:relative;overflow:hidden}
+.dark-section>.wrap,.contact>.wrap{position:relative;z-index:2}
+.section-network{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.34}
 .dark-section h2,.dark-section h3{color:white}
 .dark-section p{color:#C8D9E3}
 .dark-section .section-head .eyebrow{color:var(--aqua)}
@@ -152,7 +154,7 @@ p{color:var(--muted);font-size:1.05rem}
 .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:34px;align-items:start}
 .portrait{border-radius:22px;overflow:hidden;border:1px solid rgba(10,37,64,.10);box-shadow:var(--shadow);background:#EAF0F4}
 .portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 12%}
-.contact{background:var(--navy);color:white}
+.contact{background:linear-gradient(145deg,#081f36 0%,#0A2540 62%,#123b60 100%);color:white;position:relative;overflow:hidden}
 .contact h2{color:white}
 .contact p{color:#C7D8E3}
 .contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}
@@ -254,6 +256,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 </section>
 
 <section class="dark-section" id="trabajo">
+  <canvas class="section-network" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Cómo trabajo</div>
@@ -355,6 +358,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 </section>
 
 <section class="dark-section" id="ejemplos">
+  <canvas class="section-network" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Ejemplos</div>
@@ -429,6 +433,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 </section>
 
 <section class="contact" id="contacto">
+  <canvas class="section-network" aria-hidden="true"></canvas>
   <div class="wrap contact-grid reveal">
     <div>
       <div class="eyebrow">Siguiente paso</div>
@@ -491,6 +496,52 @@ if(canvas){
   }
   resizeNetwork();drawNetwork();window.addEventListener('resize',resizeNetwork);
 }
+
+
+document.querySelectorAll('.section-network').forEach(canvas=>{
+  const ctx=canvas.getContext('2d');
+  let pts=[];
+  function resizeSectionNetwork(){
+    const r=canvas.parentElement.getBoundingClientRect();
+    canvas.width=Math.max(1,Math.floor(r.width*devicePixelRatio));
+    canvas.height=Math.max(1,Math.floor(r.height*devicePixelRatio));
+    canvas.style.width=r.width+'px';
+    canvas.style.height=r.height+'px';
+    ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+    const count=Math.min(58,Math.max(28,Math.floor(r.width/24)));
+    pts=Array.from({length:count},()=>({
+      x:Math.random()*r.width,
+      y:Math.random()*r.height,
+      vx:(Math.random()-.5)*.10,
+      vy:(Math.random()-.5)*.10
+    }));
+  }
+  function drawSectionNetwork(){
+    const w=canvas.clientWidth,h=canvas.clientHeight;
+    ctx.clearRect(0,0,w,h);
+    for(const p of pts){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>w)p.vx*=-1;
+      if(p.y<0||p.y>h)p.vy*=-1;
+    }
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+        if(d<150){
+          ctx.strokeStyle='rgba(110,231,224,'+(0.18*(1-d/150))+')';
+          ctx.lineWidth=.65;
+          ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+        }
+      }
+      ctx.fillStyle='rgba(110,231,224,.46)';
+      ctx.beginPath();ctx.arc(pts[i].x,pts[i].y,1.2,0,Math.PI*2);ctx.fill();
+    }
+    requestAnimationFrame(drawSectionNetwork);
+  }
+  resizeSectionNetwork();
+  drawSectionNetwork();
+  window.addEventListener('resize',resizeSectionNetwork);
+});
 
 const io=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
