@@ -98,7 +98,7 @@ section.dark-section::before,.contact::before{
   background-size:220px 180px,280px 240px,310px 250px,260px 210px
 }
 .dark-section>.wrap,.contact>.wrap{position:relative;z-index:2}
-.section-network{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.72;mix-blend-mode:screen}
+.section-network{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.84;mix-blend-mode:screen}
 .dark-section h2,.dark-section h3{color:white}
 .dark-section p{color:#C8D9E3}
 .dark-section .section-head .eyebrow{color:var(--aqua)}
@@ -481,13 +481,13 @@ async function loadPhoto(selector,path){
     const bin=atob(b64);
     const bytes=new Uint8Array(bin.length);
     for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
-    const url=URL.createObjectURL(new Blob([bytes],{type:'image/jpeg'}));
+    const url=URL.createObjectURL(new Blob([bytes],{type:'image/webp'}));
     img.onload=()=>URL.revokeObjectURL(url);
     img.src=url;
   }catch(e){console.error(e);}
 }
-loadPhoto('[data-photo="hero"]','assets/photo-hero.b64');
-loadPhoto('[data-photo="about"]','assets/photo-about.b64');
+loadPhoto('[data-photo="hero"]','assets/photo-hero-hq.b64');
+loadPhoto('[data-photo="about"]','assets/photo-about-hq.b64');
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
@@ -536,7 +536,7 @@ document.querySelectorAll('.section-network').forEach(canvas=>{
     canvas.style.width=r.width+'px';
     canvas.style.height=r.height+'px';
     ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
-    const count=Math.min(86,Math.max(42,Math.floor(r.width/17)));
+    const count=Math.min(96,Math.max(48,Math.floor(r.width/15)));
     pts=Array.from({length:count},()=>({
       x:Math.random()*r.width,
       y:Math.random()*r.height,
@@ -556,13 +556,13 @@ document.querySelectorAll('.section-network').forEach(canvas=>{
       for(let j=i+1;j<pts.length;j++){
         const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
         if(d<175){
-          ctx.strokeStyle='rgba(110,231,224,'+(0.34*(1-d/175))+')';
-          ctx.lineWidth=.9;
+          ctx.strokeStyle='rgba(110,231,224,'+(0.44*(1-d/175))+')';
+          ctx.lineWidth=1.05;
           ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
         }
       }
-      ctx.fillStyle='rgba(110,231,224,.82)';
-      ctx.beginPath();ctx.arc(pts[i].x,pts[i].y,1.55,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba(110,231,224,.92)';
+      ctx.beginPath();ctx.arc(pts[i].x,pts[i].y,1.75,0,Math.PI*2);ctx.fill();
     }
     requestAnimationFrame(drawSectionNetwork);
   }
