@@ -24,7 +24,7 @@
   --muted:#5E7386;
   --line:#DDE8EC;
   --soft:#EAFBFA;
-  --shadow:0 18px 46px rgba(10,37,64,.09);\n  --portrait:url("assets/santiago-correa-web.jpg");
+  --shadow:0 18px 46px rgba(10,37,64,.09);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -73,19 +73,9 @@ h1{font-size:clamp(3rem,7vw,5.7rem);margin:16px 0 20px;max-width:11ch}
 }
 .hero-mark::before,.hero-mark::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(110,231,224,.16)}
 .hero-mark::before{inset:12%}.hero-mark::after{inset:25%}
-.hero-photo{
-  aspect-ratio:4/5;border-radius:28px;
-  background-image:linear-gradient(180deg,rgba(10,37,64,.02),rgba(10,37,64,.18)),var(--portrait);
-  background-size:cover;background-position:center 18%;
-  border:1px solid rgba(110,231,224,.26);
-  box-shadow:0 26px 70px rgba(0,0,0,.24);
-  position:relative;overflow:hidden
-}
-.hero-photo::after{
-  content:"";position:absolute;inset:auto 8% -10% 8%;height:35%;
-  background:radial-gradient(circle,rgba(34,211,197,.22),transparent 70%);
-  filter:blur(12px);pointer-events:none
-}
+.hero-photo{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(110,231,224,.26);box-shadow:0 26px 70px rgba(0,0,0,.24);background:#0d2d4a}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 16%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(10,37,64,.16));pointer-events:none}
 .net{animation:meshMove 18s ease-in-out infinite alternate}
 @keyframes meshMove{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(18px,-10px,0) scale(1.025)}}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
@@ -97,6 +87,11 @@ h1{font-size:clamp(3rem,7vw,5.7rem);margin:16px 0 20px;max-width:11ch}
 .small-note{font-size:.9rem;color:#9FB5C3;margin-top:14px}
 section{padding:82px 0;border-top:1px solid var(--line)}
 section.alt{background:var(--ice)}
+section.dark-section{background:linear-gradient(145deg,#081f36 0%,#0A2540 62%,#123b60 100%);color:white;border-top-color:rgba(255,255,255,.08)}
+.dark-section h2,.dark-section h3{color:white}
+.dark-section p{color:#C8D9E3}
+.dark-section .section-head .eyebrow{color:var(--aqua)}
+.dark-section .btn-light{background:var(--teal);color:var(--navy);border-color:transparent}
 .section-head{max-width:760px;margin-bottom:36px}
 .section-head .eyebrow{color:var(--blue)}
 h2{font-size:clamp(2.1rem,4.7vw,3.7rem);margin:10px 0 14px;color:var(--navy)}
@@ -117,47 +112,46 @@ p{color:var(--muted);font-size:1.05rem}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0;position:relative}.r4-flow::before{content:"";position:absolute;left:6%;right:6%;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--teal),var(--blue),var(--teal),transparent);opacity:.5;z-index:0}
 .step{position:relative;background:white;border:1px solid var(--line);border-radius:16px;padding:20px;min-height:150px;z-index:1;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}.step:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(10,37,64,.10);border-color:#BFE8E4}.step::before{content:"";position:absolute;top:-7px;left:20px;width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(34,211,197,.10)}
 .step b{display:block;color:var(--blue);font-family:"Space Grotesk";font-size:.83rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.dark-section .step{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);box-shadow:none}
+.dark-section .step h3{color:white}
+.dark-section .step p{color:#C8D9E3}
+.dark-section .step b{color:var(--aqua)}
+.dark-section .step:hover{border-color:rgba(110,231,224,.48);box-shadow:0 18px 34px rgba(0,0,0,.18)}
 .step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:1.4rem;z-index:2}
-.journey{display:grid;gap:18px;max-width:980px}
-.journey-step{display:grid;grid-template-columns:72px 1fr 260px;align-items:center;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+.journey{display:grid;gap:18px;max-width:1020px}
+.journey-step{display:grid;grid-template-columns:72px 1fr 330px;align-items:center;gap:28px;padding:28px 0;border-top:1px solid var(--line)}
 .journey-step:last-child{border-bottom:1px solid var(--line)}
 .journey-num{font-family:"Space Grotesk";font-size:1rem;color:var(--teal);letter-spacing:.08em}
 .journey-copy p{margin:6px 0 0}
-.journey-visual{min-height:150px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#fff,#F6FBFC);position:relative;overflow:hidden;box-shadow:0 16px 34px rgba(10,37,64,.06)}
-.visual-talk .bubble{position:absolute;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.85rem;color:var(--navy);box-shadow:0 8px 20px rgba(10,37,64,.06)}
-.visual-talk .b1{left:22px;top:25px}.visual-talk .b2{right:20px;top:55px}.visual-talk .b3{left:72px;bottom:20px}
-.visual-talk::before,.visual-talk::after{content:"";position:absolute;background:linear-gradient(90deg,var(--teal),var(--blue));height:1px;opacity:.35;transform-origin:left}
-.visual-talk::before{width:120px;left:62px;top:58px;transform:rotate(18deg)}.visual-talk::after{width:110px;left:88px;top:95px;transform:rotate(-16deg)}
-.visual-r4{display:grid;grid-template-columns:repeat(4,1fr);align-items:center;padding:22px;gap:8px}
-.visual-r4 span{display:grid;place-items:center;aspect-ratio:1;border-radius:50%;background:var(--navy);color:var(--aqua);font-family:"Space Grotesk";position:relative}
-.visual-r4 span:not(:last-child)::after{content:"";position:absolute;width:20px;height:2px;background:var(--teal);right:-18px}
-.visual-build{display:grid;place-items:center}
-.visual-build .screen{width:74%;height:88px;border-radius:12px;background:var(--navy);padding:14px;display:grid;gap:8px}
-.visual-build .screen div{height:10px;border-radius:999px;background:rgba(110,231,224,.45)}.visual-build .screen div:nth-child(2){width:72%}.visual-build .screen div:nth-child(3){width:48%}
-.visual-build .play{position:absolute;right:24px;bottom:20px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:var(--navy);font-size:.85rem}
-.visual-decide{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:24px}
-.visual-decide .check{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:var(--navy);font-size:1.5rem;font-weight:700}
-.visual-decide span{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:white;font-size:.82rem}
-.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.example{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;position:relative;overflow:hidden}.example::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:linear-gradient(90deg,var(--teal),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .28s ease}.example:hover::after{transform:scaleX(1)}
-.example:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#C8E5E2}
-.example-visual{height:150px;border-radius:14px;margin-bottom:20px;background:linear-gradient(145deg,#F7FBFC,#EAF7F6);position:relative;overflow:hidden;border:1px solid #E1ECEF}
-.ev-conversation .avatar-dot{position:absolute;width:44px;height:44px;border-radius:50%;background:var(--navy);left:22px;top:22px}
-.ev-conversation .wave{position:absolute;left:84px;right:24px;top:38px;height:12px;background:repeating-linear-gradient(90deg,var(--teal) 0 4px,transparent 4px 9px);opacity:.65}
-.content-stack{position:absolute;left:34px;right:34px;bottom:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.content-stack span{height:48px;border-radius:9px;background:white;border:1px solid var(--line);box-shadow:0 8px 16px rgba(10,37,64,.05)}
-.ev-video .frame{position:absolute;inset:18px 28px 42px;border-radius:12px;background:linear-gradient(145deg,#123b60,#0A2540);display:grid;place-items:center}.play-mini{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:var(--navy)}
-.ev-video .timeline{position:absolute;left:28px;right:28px;bottom:18px;display:grid;grid-template-columns:2fr 1fr 3fr;gap:5px}.ev-video .timeline span{height:8px;border-radius:999px;background:var(--blue)}.ev-video .timeline span:nth-child(2){background:var(--teal)}
-.ev-process .node{position:absolute;padding:8px 10px;border-radius:10px;background:white;border:1px solid var(--line);font-size:.78rem;color:var(--navy);z-index:2}.ev-process .n1{left:14px;top:56px}.ev-process .n2{left:50%;top:24px;transform:translateX(-50%)}.ev-process .n3{right:14px;top:78px}.ev-process .connector{position:absolute;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue));opacity:.55;transform-origin:left}.ev-process .c1{width:92px;left:70px;top:67px;transform:rotate(-18deg)}.ev-process .c2{width:88px;left:54%;top:61px;transform:rotate(18deg)}
+.journey-visual{min-height:178px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#fff,#F6FBFC);position:relative;overflow:hidden;box-shadow:0 18px 38px rgba(10,37,64,.08);padding:16px}
+.mock-window{height:100%;min-height:146px;border-radius:14px;background:#fff;border:1px solid #E2ECEF;overflow:hidden;box-shadow:0 10px 24px rgba(10,37,64,.06)}
+.mock-top{height:28px;background:#F4F7F8;border-bottom:1px solid #E4ECEF;display:flex;align-items:center;gap:6px;padding:0 10px}
+.mock-top i{width:7px;height:7px;border-radius:50%;background:#C9D7DE}.mock-top i:nth-child(1){background:var(--teal)}
+.chat-body{padding:12px;display:grid;gap:8px}
+.chat-row{display:flex;gap:8px;align-items:flex-start}.chat-avatar{width:26px;height:26px;border-radius:50%;background:linear-gradient(145deg,var(--blue),var(--navy));flex:0 0 auto}
+.chat-msg{height:28px;border-radius:9px;background:#EAFBFA;flex:1}.chat-row.me{padding-left:34px}.chat-row.me .chat-msg{background:#EEF3F8}
+.tag-strip{display:flex;gap:6px;padding:0 12px 12px}.tag-strip span{font-size:.68rem;padding:5px 8px;border-radius:999px;background:white;border:1px solid var(--line);color:var(--muted)}
+.r4-board{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px}
+.r4-mini{border-radius:10px;padding:10px;background:#F7FBFC;border:1px solid #E2ECEF;min-height:48px}.r4-mini b{display:block;font-family:"Space Grotesk";font-size:.7rem;color:var(--blue);margin-bottom:3px}.r4-mini span{display:block;height:6px;border-radius:999px;background:#DCE8EC;margin-top:5px}.r4-mini span:last-child{width:68%}
+.workspace{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;padding:12px;height:100%}
+.script-card,.video-card{border:1px solid #E2ECEF;border-radius:10px;background:#fff;padding:10px}
+.script-card b{font-family:"Space Grotesk";font-size:.72rem;color:var(--navy)}.script-line{height:7px;border-radius:999px;background:#DCE8EC;margin-top:8px}.script-line:nth-child(3){width:78%}.script-line:nth-child(4){width:55%}
+.video-card{background:linear-gradient(145deg,#123b60,#0A2540);display:grid;place-items:center;position:relative}.video-card .play{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:var(--navy);font-size:.8rem}.timeline-mini{position:absolute;left:10px;right:10px;bottom:10px;height:5px;border-radius:999px;background:linear-gradient(90deg,var(--teal) 0 34%,#6E8DA4 34% 38%,var(--blue) 38% 100%)}
+.review-board{padding:12px;display:grid;gap:8px}.review-row{display:grid;grid-template-columns:72px 1fr 28px;align-items:center;gap:8px}.review-row strong{font-family:"Space Grotesk";font-size:.68rem;color:var(--navy)}.review-row .bar{height:9px;border-radius:999px;background:#E0E9ED;position:relative}.review-row .bar::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w,65%);border-radius:inherit;background:linear-gradient(90deg,var(--teal),var(--blue))}.review-row .ok{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#EAFBFA;color:#0C7F76;font-size:.75rem}
+.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.example{background:white;border:1px solid var(--line);border-radius:20px;padding:22px;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;position:relative;overflow:hidden}.example::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:linear-gradient(90deg,var(--teal),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .28s ease}.example:hover::after{transform:scaleX(1)}
+.example:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(0,0,0,.18);border-color:#7EAFB8}
+.dark-section .example{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16)}
+.dark-section .example h3{color:white}.dark-section .example p{color:#C8D9E3}
+.example-visual{height:190px;border-radius:15px;margin-bottom:20px;background:#F7FBFC;position:relative;overflow:hidden;border:1px solid #E1ECEF}
+.output-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:10px}.transcript{grid-column:1/-1;background:#fff;border:1px solid #E2ECEF;border-radius:9px;padding:10px}.transcript b{font-family:"Space Grotesk";font-size:.68rem;color:var(--navy)}.tline{height:6px;border-radius:999px;background:#DCE8EC;margin-top:6px}.tline:nth-child(3){width:72%}
+.output-card{border-radius:9px;background:linear-gradient(145deg,#fff,#EDF9F8);border:1px solid #DDE8EC;padding:9px}.output-card b{display:block;font-family:"Space Grotesk";font-size:.68rem;color:var(--blue)}.output-card span{display:block;height:28px;border-radius:7px;background:linear-gradient(145deg,#123b60,#0A2540);margin-top:6px}
+.idea-flow{display:grid;grid-template-columns:.8fr 1fr 1fr;gap:8px;padding:10px;height:100%;align-items:center}.idea-note{padding:10px;border-radius:10px;background:#FFF7D6;border:1px solid #F1E4A3;font-size:.68rem;color:#6B5A16;transform:rotate(-2deg)}.script-mini{background:#fff;border:1px solid #E2ECEF;border-radius:10px;padding:10px}.script-mini b{font-size:.68rem;font-family:"Space Grotesk";color:var(--navy)}.script-mini i{display:block;height:6px;background:#DCE8EC;border-radius:999px;margin-top:6px}.preview-mini{height:100px;border-radius:10px;background:linear-gradient(145deg,#123b60,#0A2540);display:grid;place-items:center;color:var(--aqua);font-size:1.2rem;position:relative}.preview-mini::after{content:"";position:absolute;left:8px;right:8px;bottom:8px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--teal) 0 42%,#567B96 42% 100%)}
+.process-flow{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr;align-items:center;gap:4px;padding:12px;height:100%}.proc-card{border:1px solid #DDE8EC;border-radius:10px;background:#fff;padding:10px;text-align:center}.proc-card b{font-family:"Space Grotesk";font-size:.68rem;color:var(--navy)}.proc-card i{display:block;width:34px;height:34px;border-radius:9px;background:linear-gradient(145deg,#EAFBFA,#D9F2F0);margin:0 auto 8px}.proc-arrow{color:var(--teal);font-size:1.1rem;text-align:center}
 .arrow{font-family:"Space Grotesk";color:var(--teal);font-size:1.35rem;margin:14px 0;animation:arrowPulse 1.8s ease-in-out infinite}@keyframes arrowPulse{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(5px);opacity:1}}
 .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:34px;align-items:start}
-.portrait{
-  min-height:420px;border-radius:22px;
-  background-image:linear-gradient(180deg,rgba(10,37,64,.02),rgba(10,37,64,.12)),var(--portrait);
-  background-size:cover;background-position:center 18%;
-  border:1px solid rgba(34,211,197,.25);
-  box-shadow:var(--shadow)
-}
+.portrait{border-radius:22px;overflow:hidden;border:1px solid rgba(10,37,64,.10);box-shadow:var(--shadow);background:#EAF0F4}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 12%}
 .contact{background:var(--navy);color:white}
 .contact h2{color:white}
 .contact p{color:#C7D8E3}
@@ -181,7 +175,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
   .step:not(:last-child)::after{display:none}
   .examples{grid-template-columns:1fr}
   .journey-step{grid-template-columns:56px 1fr}
-  .journey-visual{grid-column:1/-1;min-height:140px}
+  .journey-visual{grid-column:1/-1;min-height:160px}
 }
 @media(max-width:540px){
   .hero{padding:72px 0 60px}
@@ -221,7 +215,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
       </div>
       <div class="small-note">Conversación inicial de 30 minutos · WhatsApp</div>
     </div>
-    <div class="hero-photo reveal" aria-label="Retrato de Santiago Correa"></div>
+    <div class="hero-photo reveal"><img src="assets/santiago-correa-hero.jpg" width="900" height="1125" alt="Santiago Correa, comunicador y consultor" loading="eager" decoding="async"></div>
   </div>
 </header>
 
@@ -259,7 +253,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
   </div>
 </section>
 
-<section class="alt" id="trabajo">
+<section class="dark-section" id="trabajo">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Cómo trabajo</div>
@@ -274,7 +268,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
       <div class="step"><b>R4 · Actuar</b><h3>¿Cuál es el siguiente paso?</h3><p>Convertimos la claridad en una acción concreta: contenido, video, mejora de proceso o automatización.</p></div>
     </div>
 
-    <a class="btn btn-light" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Quiero%20agendar%20una%20conversaci%C3%B3n%20de%2030%20minutos%20para%20contarte%20qu%C3%A9%20est%C3%A1%20pasando%20en%20mi%20negocio." target="_blank" rel="noopener">Agendar conversación de 30 minutos</a>
+    <a class="btn btn-light" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Quiero%20agendar%20una%20conversaci%C3%B3n%20de%2030%20minutos%20para%20contarte%20qu%C3%A9%20est%C3%A1%20pasando%20en%20mi%20negocio." target="_blank" rel="noopener">Hablemos por WhatsApp</a>
   </div>
 </section>
 
@@ -293,8 +287,16 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
           <h3>Conversamos 30 minutos</h3>
           <p>Me cuentas qué estás intentando hacer, dónde se traba y qué resultado necesitas.</p>
         </div>
-        <div class="journey-visual visual-talk">
-          <span class="bubble b1">Idea</span><span class="bubble b2">Problema</span><span class="bubble b3">Objetivo</span>
+        <div class="journey-visual">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="chat-body">
+              <div class="chat-row"><div class="chat-avatar"></div><div class="chat-msg"></div></div>
+              <div class="chat-row me"><div class="chat-msg"></div></div>
+              <div class="chat-row"><div class="chat-avatar"></div><div class="chat-msg"></div></div>
+            </div>
+            <div class="tag-strip"><span>Contexto</span><span>Problema</span><span>Objetivo</span></div>
+          </div>
         </div>
       </article>
       <article class="journey-step reveal">
@@ -303,8 +305,16 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
           <h3>Ordenamos con R4</h3>
           <p>Reconocemos qué pasa, rescatamos lo que ya sirve, redefinimos el rumbo y elegimos el siguiente paso.</p>
         </div>
-        <div class="journey-visual visual-r4">
-          <span>R1</span><span>R2</span><span>R3</span><span>R4</span>
+        <div class="journey-visual">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="r4-board">
+              <div class="r4-mini"><b>R1 · Reconocer</b><span></span><span></span></div>
+              <div class="r4-mini"><b>R2 · Rescatar</b><span></span><span></span></div>
+              <div class="r4-mini"><b>R3 · Redefinir</b><span></span><span></span></div>
+              <div class="r4-mini"><b>R4 · Actuar</b><span></span><span></span></div>
+            </div>
+          </div>
         </div>
       </article>
       <article class="journey-step reveal">
@@ -313,9 +323,14 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
           <h3>Construimos una primera versión</h3>
           <p>Puede ser un guion, una pieza de contenido, un video o una mejora concreta de proceso.</p>
         </div>
-        <div class="journey-visual visual-build">
-          <div class="screen"><div></div><div></div><div></div></div>
-          <div class="play">▶</div>
+        <div class="journey-visual">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="workspace">
+              <div class="script-card"><b>Guion / contenido</b><div class="script-line"></div><div class="script-line"></div><div class="script-line"></div></div>
+              <div class="video-card"><div class="play">▶</div><div class="timeline-mini"></div></div>
+            </div>
+          </div>
         </div>
       </article>
       <article class="journey-step reveal">
@@ -324,15 +339,22 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
           <h3>Probamos, ajustamos y decides</h3>
           <p>Antes de construir de más, vemos qué funciona y qué vale la pena llevar a una versión final.</p>
         </div>
-        <div class="journey-visual visual-decide">
-          <div class="check">✓</div><span>Probar</span><span>Ajustar</span><span>Avanzar</span>
+        <div class="journey-visual">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="review-board">
+              <div class="review-row"><strong>Versión 1</strong><div class="bar" style="--w:52%"></div><div class="ok">1</div></div>
+              <div class="review-row"><strong>Ajuste</strong><div class="bar" style="--w:76%"></div><div class="ok">2</div></div>
+              <div class="review-row"><strong>Validado</strong><div class="bar" style="--w:100%"></div><div class="ok">✓</div></div>
+            </div>
+          </div>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section id="ejemplos">
+<section class="dark-section" id="ejemplos">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Ejemplos</div>
@@ -342,10 +364,14 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 
     <div class="examples reveal">
       <article class="example">
-        <div class="example-visual ev-conversation">
-          <div class="avatar-dot"></div>
-          <div class="wave"></div>
-          <div class="content-stack"><span></span><span></span><span></span></div>
+        <div class="example-visual">
+          <div class="output-grid">
+            <div class="transcript"><b>Conversación / entrevista</b><div class="tline"></div><div class="tline"></div></div>
+            <div class="output-card"><b>Reel</b><span></span></div>
+            <div class="output-card"><b>Post</b><span></span></div>
+            <div class="output-card"><b>Carrusel</b><span></span></div>
+            <div class="output-card"><b>Artículo</b><span></span></div>
+          </div>
         </div>
         <h3>Una conversación</h3>
         <p>Una entrevista, reunión o clase.</p>
@@ -355,9 +381,12 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
       </article>
 
       <article class="example">
-        <div class="example-visual ev-video">
-          <div class="frame"><div class="play-mini">▶</div></div>
-          <div class="timeline"><span></span><span></span><span></span></div>
+        <div class="example-visual">
+          <div class="idea-flow">
+            <div class="idea-note">“Quiero explicar esto, pero todavía está enredado.”</div>
+            <div class="script-mini"><b>Guion claro</b><i></i><i></i><i></i></div>
+            <div class="preview-mini">▶</div>
+          </div>
         </div>
         <h3>Una idea</h3>
         <p>Algo que quieres decir, pero aún está desordenado.</p>
@@ -367,9 +396,14 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
       </article>
 
       <article class="example">
-        <div class="example-visual ev-process">
-          <div class="node n1">Buscar</div><div class="node n2">Filtrar</div><div class="node n3">Entregar</div>
-          <div class="connector c1"></div><div class="connector c2"></div>
+        <div class="example-visual">
+          <div class="process-flow">
+            <div class="proc-card"><i></i><b>Buscar</b></div>
+            <div class="proc-arrow">→</div>
+            <div class="proc-card"><i></i><b>Filtrar</b></div>
+            <div class="proc-arrow">→</div>
+            <div class="proc-card"><i></i><b>Entregar</b></div>
+          </div>
         </div>
         <h3>Una tarea repetitiva</h3>
         <p>Responder lo mismo, buscar información o repetir pasos manuales.</p>
@@ -381,9 +415,9 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
   </div>
 </section>
 
-<section class="alt" id="sobre-mi">
+<section id="sobre-mi">
   <div class="wrap about reveal">
-    <div class="portrait reveal" aria-label="Retrato de Santiago Correa"></div>
+    <div class="portrait reveal"><img src="assets/santiago-correa-sobre-mi.jpg" width="900" height="1125" alt="Santiago Correa" loading="lazy" decoding="async"></div>
     <div>
       <div class="eyebrow">Sobre mí</div>
       <h2>Santiago Correa</h2>
@@ -399,17 +433,16 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
     <div>
       <div class="eyebrow">Siguiente paso</div>
       <h2>Hablemos</h2>
-      <p>Antes de pensar en herramientas, cuéntame qué está pasando. Podemos empezar con una conversación de 30 minutos para entender el contexto y ver si tiene sentido trabajar juntos.</p>
+      <p>Cuéntame qué necesitas. Luego agendamos una reunión de 30 minutos.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Quiero%20agendar%20una%20conversaci%C3%B3n%20de%2030%20minutos." target="_blank" rel="noopener">Pedir reunión de 30 minutos</a>
-        <a class="btn btn-ghost" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20contarte%20mi%20caso." target="_blank" rel="noopener">Hablar por WhatsApp</a>
+        <a class="btn btn-primary" href="https://wa.me/573153999299?text=Hola%2C%20Santiago.%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20contarte%20qu%C3%A9%20necesito." target="_blank" rel="noopener">Hablemos por WhatsApp</a>
       </div>
     </div>
 
     <div class="faq">
       <details><summary>¿Necesito saber exactamente qué necesito?</summary><p>No. Parte de la primera conversación consiste justamente en ordenar el problema y entender qué vale la pena resolver.</p></details>
       <details><summary>¿Cuánto cuesta?</summary><p>Depende del alcance. La conversación inicial de 30 minutos no tiene costo. Si tiene sentido avanzar, te envío una propuesta clara con precio, entregables y tiempos antes de empezar.</p></details>
-      <details><summary>¿Me puedes pasar un presupuesto sin hacer una reunión?</summary><p>Sí, si el alcance ya está suficientemente claro. Si no, prefiero una conversación breve para evitar cotizar algo que no resuelva el problema real.</p></details>
+      <details><summary>¿Me puedes pasar un presupuesto sin hacer una reunión?</summary><p>No. Primero hacemos una reunión de 30 minutos para entender el caso. Después te envío una propuesta con alcance, precio, entregables y tiempos.</p></details>
       <details><summary>¿Cuánto tarda y cuánto tiempo me exige a mí?</summary><p>Depende del proyecto. Antes de empezar definimos el cronograma. Tu participación se concentra en aportar contexto, validar decisiones clave y revisar la versión que construimos.</p></details>
       <details><summary>¿Sirve para mi rubro o solo para empresas grandes?</summary><p>Trabajo con profesionales, emprendimientos, pequeñas empresas y organizaciones. Lo importante no es el tamaño, sino que exista un problema concreto de comunicación, contenido o proceso que valga la pena resolver.</p></details>
       <details><summary>¿Qué pasa si algo falla o no funciona como esperaba?</summary><p>Por eso prefiero probar en pequeño antes de construir de más. Revisamos qué falló, ajustamos y decidimos si vale la pena continuar, cambiar el enfoque o detenernos.</p></details>
