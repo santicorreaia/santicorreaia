@@ -51,8 +51,9 @@ a{text-decoration:none;color:inherit}
 }
 .hero::before{width:520px;height:520px;right:-160px;top:-180px;background:radial-gradient(circle,rgba(34,211,197,.22),transparent 66%)}
 .hero::after{width:420px;height:420px;left:-200px;bottom:-230px;background:radial-gradient(circle,rgba(20,100,176,.34),transparent 65%)}
+#networkCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.78}
 .net{
-  position:absolute;inset:0;opacity:.16;pointer-events:none;
+  position:absolute;inset:0;opacity:.07;pointer-events:none;z-index:0;
   background-image:
     radial-gradient(circle at 20% 30%,var(--aqua) 0 1.2px,transparent 1.5px),
     radial-gradient(circle at 45% 20%,var(--teal) 0 1.2px,transparent 1.5px),
@@ -117,9 +118,37 @@ p{color:var(--muted);font-size:1.05rem}
 .step{position:relative;background:white;border:1px solid var(--line);border-radius:16px;padding:20px;min-height:150px;z-index:1;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}.step:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(10,37,64,.10);border-color:#BFE8E4}.step::before{content:"";position:absolute;top:-7px;left:20px;width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(34,211,197,.10)}
 .step b{display:block;color:var(--blue);font-family:"Space Grotesk";font-size:.83rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:1.4rem;z-index:2}
+.journey{display:grid;gap:18px;max-width:980px}
+.journey-step{display:grid;grid-template-columns:72px 1fr 260px;align-items:center;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+.journey-step:last-child{border-bottom:1px solid var(--line)}
+.journey-num{font-family:"Space Grotesk";font-size:1rem;color:var(--teal);letter-spacing:.08em}
+.journey-copy p{margin:6px 0 0}
+.journey-visual{min-height:150px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#fff,#F6FBFC);position:relative;overflow:hidden;box-shadow:0 16px 34px rgba(10,37,64,.06)}
+.visual-talk .bubble{position:absolute;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.85rem;color:var(--navy);box-shadow:0 8px 20px rgba(10,37,64,.06)}
+.visual-talk .b1{left:22px;top:25px}.visual-talk .b2{right:20px;top:55px}.visual-talk .b3{left:72px;bottom:20px}
+.visual-talk::before,.visual-talk::after{content:"";position:absolute;background:linear-gradient(90deg,var(--teal),var(--blue));height:1px;opacity:.35;transform-origin:left}
+.visual-talk::before{width:120px;left:62px;top:58px;transform:rotate(18deg)}.visual-talk::after{width:110px;left:88px;top:95px;transform:rotate(-16deg)}
+.visual-r4{display:grid;grid-template-columns:repeat(4,1fr);align-items:center;padding:22px;gap:8px}
+.visual-r4 span{display:grid;place-items:center;aspect-ratio:1;border-radius:50%;background:var(--navy);color:var(--aqua);font-family:"Space Grotesk";position:relative}
+.visual-r4 span:not(:last-child)::after{content:"";position:absolute;width:20px;height:2px;background:var(--teal);right:-18px}
+.visual-build{display:grid;place-items:center}
+.visual-build .screen{width:74%;height:88px;border-radius:12px;background:var(--navy);padding:14px;display:grid;gap:8px}
+.visual-build .screen div{height:10px;border-radius:999px;background:rgba(110,231,224,.45)}.visual-build .screen div:nth-child(2){width:72%}.visual-build .screen div:nth-child(3){width:48%}
+.visual-build .play{position:absolute;right:24px;bottom:20px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:var(--navy);font-size:.85rem}
+.visual-decide{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:24px}
+.visual-decide .check{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:var(--navy);font-size:1.5rem;font-weight:700}
+.visual-decide span{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:white;font-size:.82rem}
 .examples{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .example{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;position:relative;overflow:hidden}.example::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:linear-gradient(90deg,var(--teal),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .28s ease}.example:hover::after{transform:scaleX(1)}
 .example:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#C8E5E2}
+.example-visual{height:150px;border-radius:14px;margin-bottom:20px;background:linear-gradient(145deg,#F7FBFC,#EAF7F6);position:relative;overflow:hidden;border:1px solid #E1ECEF}
+.ev-conversation .avatar-dot{position:absolute;width:44px;height:44px;border-radius:50%;background:var(--navy);left:22px;top:22px}
+.ev-conversation .wave{position:absolute;left:84px;right:24px;top:38px;height:12px;background:repeating-linear-gradient(90deg,var(--teal) 0 4px,transparent 4px 9px);opacity:.65}
+.content-stack{position:absolute;left:34px;right:34px;bottom:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.content-stack span{height:48px;border-radius:9px;background:white;border:1px solid var(--line);box-shadow:0 8px 16px rgba(10,37,64,.05)}
+.ev-video .frame{position:absolute;inset:18px 28px 42px;border-radius:12px;background:linear-gradient(145deg,#123b60,#0A2540);display:grid;place-items:center}.play-mini{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:var(--navy)}
+.ev-video .timeline{position:absolute;left:28px;right:28px;bottom:18px;display:grid;grid-template-columns:2fr 1fr 3fr;gap:5px}.ev-video .timeline span{height:8px;border-radius:999px;background:var(--blue)}.ev-video .timeline span:nth-child(2){background:var(--teal)}
+.ev-process .node{position:absolute;padding:8px 10px;border-radius:10px;background:white;border:1px solid var(--line);font-size:.78rem;color:var(--navy);z-index:2}.ev-process .n1{left:14px;top:56px}.ev-process .n2{left:50%;top:24px;transform:translateX(-50%)}.ev-process .n3{right:14px;top:78px}.ev-process .connector{position:absolute;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue));opacity:.55;transform-origin:left}.ev-process .c1{width:92px;left:70px;top:67px;transform:rotate(-18deg)}.ev-process .c2{width:88px;left:54%;top:61px;transform:rotate(18deg)}
 .arrow{font-family:"Space Grotesk";color:var(--teal);font-size:1.35rem;margin:14px 0;animation:arrowPulse 1.8s ease-in-out infinite}@keyframes arrowPulse{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(5px);opacity:1}}
 .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:34px;align-items:start}
 .portrait{
@@ -151,6 +180,8 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
   .flow{grid-template-columns:1fr 1fr}
   .step:not(:last-child)::after{display:none}
   .examples{grid-template-columns:1fr}
+  .journey-step{grid-template-columns:56px 1fr}
+  .journey-visual{grid-column:1/-1;min-height:140px}
 }
 @media(max-width:540px){
   .hero{padding:72px 0 60px}
@@ -168,6 +199,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
     <div class="links">
       <a href="#ayuda">Cómo ayudo</a>
       <a href="#trabajo">R4</a>
+      <a href="#recorrido">Cómo funciona</a>
       <a href="#ejemplos">Ejemplos</a>
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#contacto">Hablemos</a>
@@ -176,7 +208,7 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 </nav>
 
 <header class="hero" id="inicio">
-  <div class="net"></div>
+  <canvas id="networkCanvas" aria-hidden="true"></canvas><div class="net"></div>
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">Comunicación · Contenido · IA</div>
@@ -246,6 +278,60 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
   </div>
 </section>
 
+
+<section id="recorrido">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Recorre las demos</div>
+      <h2>De una conversación a algo funcionando</h2>
+      <p>No necesitas llegar con la solución definida. Empezamos por entender el problema y avanzamos por etapas concretas.</p>
+    </div>
+    <div class="journey">
+      <article class="journey-step reveal">
+        <div class="journey-num">01</div>
+        <div class="journey-copy">
+          <h3>Conversamos 30 minutos</h3>
+          <p>Me cuentas qué estás intentando hacer, dónde se traba y qué resultado necesitas.</p>
+        </div>
+        <div class="journey-visual visual-talk">
+          <span class="bubble b1">Idea</span><span class="bubble b2">Problema</span><span class="bubble b3">Objetivo</span>
+        </div>
+      </article>
+      <article class="journey-step reveal">
+        <div class="journey-num">02</div>
+        <div class="journey-copy">
+          <h3>Ordenamos con R4</h3>
+          <p>Reconocemos qué pasa, rescatamos lo que ya sirve, redefinimos el rumbo y elegimos el siguiente paso.</p>
+        </div>
+        <div class="journey-visual visual-r4">
+          <span>R1</span><span>R2</span><span>R3</span><span>R4</span>
+        </div>
+      </article>
+      <article class="journey-step reveal">
+        <div class="journey-num">03</div>
+        <div class="journey-copy">
+          <h3>Construimos una primera versión</h3>
+          <p>Puede ser un guion, una pieza de contenido, un video o una mejora concreta de proceso.</p>
+        </div>
+        <div class="journey-visual visual-build">
+          <div class="screen"><div></div><div></div><div></div></div>
+          <div class="play">▶</div>
+        </div>
+      </article>
+      <article class="journey-step reveal">
+        <div class="journey-num">04</div>
+        <div class="journey-copy">
+          <h3>Probamos, ajustamos y decides</h3>
+          <p>Antes de construir de más, vemos qué funciona y qué vale la pena llevar a una versión final.</p>
+        </div>
+        <div class="journey-visual visual-decide">
+          <div class="check">✓</div><span>Probar</span><span>Ajustar</span><span>Avanzar</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="ejemplos">
   <div class="wrap">
     <div class="section-head">
@@ -256,6 +342,11 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 
     <div class="examples reveal">
       <article class="example">
+        <div class="example-visual ev-conversation">
+          <div class="avatar-dot"></div>
+          <div class="wave"></div>
+          <div class="content-stack"><span></span><span></span><span></span></div>
+        </div>
         <h3>Una conversación</h3>
         <p>Una entrevista, reunión o clase.</p>
         <div class="arrow">↓</div>
@@ -264,6 +355,10 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
       </article>
 
       <article class="example">
+        <div class="example-visual ev-video">
+          <div class="frame"><div class="play-mini">▶</div></div>
+          <div class="timeline"><span></span><span></span><span></span></div>
+        </div>
         <h3>Una idea</h3>
         <p>Algo que quieres decir, pero aún está desordenado.</p>
         <div class="arrow">↓</div>
@@ -272,6 +367,10 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
       </article>
 
       <article class="example">
+        <div class="example-visual ev-process">
+          <div class="node n1">Buscar</div><div class="node n2">Filtrar</div><div class="node n3">Entregar</div>
+          <div class="connector c1"></div><div class="connector c2"></div>
+        </div>
         <h3>Una tarea repetitiva</h3>
         <p>Responder lo mismo, buscar información o repetir pasos manuales.</p>
         <div class="arrow">↓</div>
@@ -309,8 +408,12 @@ footer{background:#071b2e;color:#91A9B8;padding:24px 0;font-size:.9rem}
 
     <div class="faq">
       <details><summary>¿Necesito saber exactamente qué necesito?</summary><p>No. Parte de la primera conversación consiste justamente en ordenar el problema y entender qué vale la pena resolver.</p></details>
+      <details><summary>¿Cuánto cuesta?</summary><p>Depende del alcance. La conversación inicial de 30 minutos no tiene costo. Si tiene sentido avanzar, te envío una propuesta clara con precio, entregables y tiempos antes de empezar.</p></details>
+      <details><summary>¿Me puedes pasar un presupuesto sin hacer una reunión?</summary><p>Sí, si el alcance ya está suficientemente claro. Si no, prefiero una conversación breve para evitar cotizar algo que no resuelva el problema real.</p></details>
+      <details><summary>¿Cuánto tarda y cuánto tiempo me exige a mí?</summary><p>Depende del proyecto. Antes de empezar definimos el cronograma. Tu participación se concentra en aportar contexto, validar decisiones clave y revisar la versión que construimos.</p></details>
+      <details><summary>¿Sirve para mi rubro o solo para empresas grandes?</summary><p>Trabajo con profesionales, emprendimientos, pequeñas empresas y organizaciones. Lo importante no es el tamaño, sino que exista un problema concreto de comunicación, contenido o proceso que valga la pena resolver.</p></details>
+      <details><summary>¿Qué pasa si algo falla o no funciona como esperaba?</summary><p>Por eso prefiero probar en pequeño antes de construir de más. Revisamos qué falló, ajustamos y decidimos si vale la pena continuar, cambiar el enfoque o detenernos.</p></details>
       <details><summary>¿Trabajas solo con inteligencia artificial?</summary><p>No. La IA es una herramienta dentro del proceso. Primero revisamos qué necesitas y luego vemos si realmente tiene sentido usarla.</p></details>
-      <details><summary>¿La conversación inicial de 30 minutos tiene costo?</summary><p>No. Es un espacio breve para entender tu caso y ver si tiene sentido trabajar juntos.</p></details>
     </div>
   </div>
 </section>
@@ -326,6 +429,36 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
+
+const canvas=document.getElementById('networkCanvas');
+if(canvas){
+  const ctx=canvas.getContext('2d');
+  let pts=[];
+  function resizeNetwork(){
+    const r=canvas.parentElement.getBoundingClientRect();
+    canvas.width=Math.max(1,Math.floor(r.width*devicePixelRatio));
+    canvas.height=Math.max(1,Math.floor(r.height*devicePixelRatio));
+    canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';
+    ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+    const count=Math.min(72,Math.max(34,Math.floor(r.width/18)));
+    pts=Array.from({length:count},()=>({x:Math.random()*r.width,y:Math.random()*r.height,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18}));
+  }
+  function drawNetwork(){
+    const w=canvas.clientWidth,h=canvas.clientHeight;
+    ctx.clearRect(0,0,w,h);
+    for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1}
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+        if(d<130){ctx.strokeStyle='rgba(110,231,224,'+(0.22*(1-d/130))+')';ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+      }
+      ctx.fillStyle='rgba(110,231,224,.58)';ctx.beginPath();ctx.arc(pts[i].x,pts[i].y,1.35,0,Math.PI*2);ctx.fill();
+    }
+    requestAnimationFrame(drawNetwork);
+  }
+  resizeNetwork();drawNetwork();window.addEventListener('resize',resizeNetwork);
+}
+
 const io=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target);}
