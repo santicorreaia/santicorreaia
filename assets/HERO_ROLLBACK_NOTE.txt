@@ -1,0 +1,1 @@
+Se reemplaza temporalmente la foto del hero por el archivo HQ válido para eliminar el bloque gris roto.
