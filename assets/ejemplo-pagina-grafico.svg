@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280" role="img" aria-labelledby="title desc">
+<title id="title">De una idea sobre discapacidad a una página clara</title>
+<desc id="desc">Una idea inicial se ordena según el público y sus preguntas; el resultado es una propuesta visual de página web.</desc>
+<rect width="720" height="1280" fill="#fff"/>
+<style>text{font-family:Arial,sans-serif;fill:#0A2540}.small{font-size:22px;font-weight:700;letter-spacing:1px;fill:#1464B0}.title{font-size:43px;font-weight:800}.body{font-size:29px;font-weight:600}.caption{font-size:23px;fill:#40566b}.white{fill:#fff}.icon{fill:none;stroke:#1464B0;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}</style>
+<text x="46" y="68" class="small">DE LA IDEA A LA PÁGINA</text>
+<text x="46" y="124" class="title">Una idea sobre</text><text x="46" y="173" class="title" fill="#1464B0">discapacidad</text>
+<rect x="42" y="220" width="636" height="178" rx="23" fill="#F3F8FC" stroke="#D5E6F3" stroke-width="3"/>
+<circle cx="115" cy="306" r="43" fill="#DDEEFE"/><path class="icon" d="M94 298h42v30h-25l-11 9v-9h-6z"/>
+<text x="174" y="277" class="small">LA IDEA INICIAL</text>
+<text x="174" y="318" class="body">«Tengo mucho que contar,</text><text x="174" y="356" class="body">pero ¿por dónde empiezo?»</text>
+<path d="M360 417v38m-14-14 14 14 14-14" fill="none" stroke="#1464B0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="45" y="505" class="small">LE DAMOS UN ORDEN</text>
+<rect x="44" y="537" width="196" height="177" rx="20" fill="#E8F3FF"/>
+<circle cx="142" cy="597" r="30" fill="#fff"/><circle class="icon" cx="142" cy="588" r="9"/><path class="icon" d="M124 609c6-11 30-11 36 0"/>
+<text x="72" y="665" class="body" style="font-size:25px">¿Para quién?</text>
+<path d="M251 625h28m-10-10 10 10-10 10" fill="none" stroke="#1464B0" stroke-width="5"/>
+<rect x="287" y="537" width="196" height="177" rx="20" fill="#E9F9F6"/>
+<circle cx="385" cy="597" r="30" fill="#fff"/><path class="icon" d="M373 585h25m-25 10h25m-25 10h15"/>
+<text x="317" y="665" class="body" style="font-size:25px">¿Qué contar?</text>
+<path d="M494 625h28m-10-10 10 10-10 10" fill="none" stroke="#1464B0" stroke-width="5"/>
+<rect x="530" y="537" width="148" height="177" rx="20" fill="#FFF3DF"/>
+<circle cx="604" cy="597" r="30" fill="#fff"/><path class="icon" d="M594 585h20v24h-20zm5 7h10m-10 7h10"/>
+<text x="557" y="665" class="body" style="font-size:25px">¿En qué</text><text x="562" y="692" class="body" style="font-size:25px">orden?</text>
+<path d="M360 732v37m-14-14 14 14 14-14" fill="none" stroke="#1464B0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="45" y="813" class="small">UNA PÁGINA CON RUMBO</text>
+<rect x="45" y="839" width="630" height="357" rx="22" fill="#fff" stroke="#BBD5E6" stroke-width="4"/>
+<path d="M45 861q0-22 22-22h586q22 0 22 22v35H45z" fill="#E7F4FF"/>
+<circle cx="73" cy="868" r="7" fill="#1464B0"/><circle cx="96" cy="868" r="7" fill="#22D3C5"/><circle cx="119" cy="868" r="7" fill="#819BAF"/>
+<text x="78" y="944" class="small">EJEMPLO DE ESTRUCTURA</text>
+<text x="78" y="1002" class="title" style="font-size:37px">Empieza por lo que</text><text x="78" y="1045" class="title" style="font-size:37px">necesitas hoy</text>
+<rect x="77" y="1080" width="171" height="70" rx="12" fill="#E6F1FF"/><rect x="274" y="1080" width="171" height="70" rx="12" fill="#E6F9F5"/><rect x="471" y="1080" width="171" height="70" rx="12" fill="#FFF2DE"/>
+<text x="106" y="1124" class="body" style="font-size:22px">Entender</text><text x="296" y="1124" class="body" style="font-size:22px">Acompañar</text><text x="495" y="1124" class="body" style="font-size:22px">Compartir</text>
+<text x="98" y="1248" class="caption">La idea sigue siendo tuya. Le damos forma juntos.</text>
+</svg>

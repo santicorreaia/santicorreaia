@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280" role="img" aria-labelledby="title desc">
+<title id="title">Así cambió mi trabajo en el SENA</title>
+<desc id="desc">Reporte diario: de al menos dos horas a unos quince minutos. Acta semanal: de al menos tres horas a entre diez y veinte minutos. La inteligencia artificial prepara borradores y Santiago revisa el contenido.</desc>
+<rect width="720" height="1280" fill="#fff"/>
+<style>text{font-family:Arial,sans-serif;fill:#0A2540}.small{font-size:21px;font-weight:700;letter-spacing:.7px;fill:#1464B0}.title{font-size:43px;font-weight:800}.body{font-size:29px;font-weight:700}.caption{font-size:23px;fill:#40566b}.icon{fill:none;stroke:#1464B0;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}</style>
+<text x="44" y="65" class="small">ANTES Y AHORA</text><text x="44" y="120" class="title">Así cambió mi trabajo</text>
+<text x="44" y="157" class="caption">En el SENA, entidad pública de formación en Colombia</text>
+<rect x="44" y="202" width="632" height="410" rx="22" fill="#F5F9FC" stroke="#D5E6F3" stroke-width="3"/>
+<circle cx="116" cy="277" r="43" fill="#DDEEFE"/><path class="icon" d="M97 255h38v43H97zm8 9h20m-20 9h20m-20 9h14"/>
+<text x="178" y="268" class="small">REPORTE DIARIO</text><text x="178" y="308" class="body">Noticias listas para revisar</text>
+<line x1="95" y1="528" x2="625" y2="528" stroke="#BED4E4" stroke-width="3"/>
+<rect x="194" y="359" width="78" height="169" rx="11" fill="#829DB3"/><rect x="445" y="502" width="78" height="26" rx="11" fill="#1464B0"/>
+<text x="179" y="349" class="body" style="font-size:31px">≥ 2 h</text><text x="424" y="484" class="body" style="font-size:31px;fill:#1464B0">≈ 15 min</text>
+<text x="193" y="567" class="caption">Antes</text><text x="445" y="567" class="caption">Ahora</text>
+<path d="M341 434h54m-16-16 16 16-16 16" fill="none" stroke="#1464B0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="44" y="639" width="632" height="410" rx="22" fill="#F5F9FC" stroke="#D5E6F3" stroke-width="3"/>
+<circle cx="116" cy="714" r="43" fill="#DDF7F2"/><path class="icon" d="M99 691h31l9 9v39H99zm31 0v10h9m-30 12h20m-20 10h16"/>
+<text x="178" y="705" class="small">ACTA SEMANAL</text><text x="178" y="745" class="body">Acuerdos claros y ordenados</text>
+<line x1="95" y1="965" x2="625" y2="965" stroke="#BED4E4" stroke-width="3"/>
+<rect x="194" y="796" width="78" height="169" rx="11" fill="#829DB3"/><rect x="445" y="939" width="78" height="26" rx="11" fill="#1464B0"/>
+<text x="179" y="786" class="body" style="font-size:31px">≥ 3 h</text><text x="406" y="921" class="body" style="font-size:31px;fill:#1464B0">10–20 min</text>
+<text x="193" y="1004" class="caption">Antes</text><text x="445" y="1004" class="caption">Ahora</text>
+<path d="M341 871h54m-16-16 16 16-16 16" fill="none" stroke="#1464B0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="44" y="1080" width="632" height="126" rx="20" fill="#0A2540"/>
+<circle cx="115" cy="1142" r="32" fill="#22D3C5"/><path d="M101 1142l10 10 20-22" fill="none" stroke="#0A2540" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="170" y="1133" class="body" style="font-size:27px;fill:#fff">La IA prepara un borrador.</text>
+<text x="170" y="1170" class="body" style="font-size:27px;fill:#fff">Yo verifico y edito.</text>
+<text x="54" y="1250" class="caption" style="font-size:20px">Tiempos aproximados según mi experiencia</text>
+</svg>
