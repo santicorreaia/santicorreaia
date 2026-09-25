@@ -1,23 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280" role="img" aria-labelledby="title desc"><title id="title">Dos tareas del SENA, de horas a minutos</title><desc id="desc">El reporte diario pasó de al menos dos horas a unos quince minutos. El acta semanal pasó de al menos tres horas a entre diez y veinte minutos. La IA prepara el borrador y Santiago verifica y edita.</desc><defs><clipPath id="portrait"><rect x="44" y="53" width="238" height="296" rx="17"/></clipPath></defs><rect width="720" height="1280" fill="white"/><style>text{font-family:Arial,sans-serif;fill:#0A2540}.serif{font-family:Georgia,serif;font-weight:700}.blue{fill:#1464B0}.label{font-size:22px;font-weight:700;fill:#1464B0}.body{font-size:25px;font-weight:700}.note{font-size:21px;fill:#40566b}.icon{fill:none;stroke:#1464B0;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280" role="img" aria-labelledby="title desc"><title id="title">Dos tareas del SENA, de horas a minutos</title><desc id="desc">El reporte diario pasó de al menos dos horas a unos quince minutos. El acta semanal pasó de al menos tres horas a entre diez y veinte minutos. La IA prepara el borrador y Santiago verifica y edita.</desc><defs><clipPath id="portrait"><rect x="44" y="53" width="238" height="296" rx="17"/></clipPath></defs><rect width="720" height="1280" fill="white"/><style>text{font-family:Arial,sans-serif;fill:#0A2540}.serif{font-family:Georgia,serif;font-weight:900}.blue{fill:#1464B0}.label{font-size:22px;font-weight:700;fill:#1464B0}.body{font-size:25px;font-weight:700}.note{font-size:21px;fill:#40566b}.icon{fill:none;stroke:#1464B0;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}</style>
 <rect x="44" y="53" width="238" height="296" rx="17" fill="#EAF4FC"/>
 <rect x="65" y="88" width="151" height="192" rx="12" fill="#fff" stroke="#A8CAE2" stroke-width="4" transform="rotate(-9 140 184)"/>
 <rect x="110" y="118" width="145" height="190" rx="12" fill="#fff" stroke="#A8CAE2" stroke-width="4" transform="rotate(7 182 213)"/>
 <rect x="101" y="125" width="62" height="18" rx="4" fill="#1464B0"/>
 <path d="M101 163h96m-96 18h77m-77 18h89" stroke="#A8CAE2" stroke-width="8" stroke-linecap="round"/>
 <circle cx="180" cy="251" r="46" fill="#22D3C5"/><path d="M159 251l15 15 27-31" fill="none" stroke="#0A2540" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="308" y="112" class="serif" font-size="47">De horas</text><text x="308" y="171" class="serif blue" font-size="47">a minutos</text><text x="308" y="222" class="body">Así cambió mi trabajo</text><text x="308" y="258" class="note">en el SENA*</text><rect x="305" y="287" width="364" height="60" rx="12" fill="#E6F5F2"/><text x="322" y="326" class="body" font-size="22">La IA ayuda. Yo reviso.</text>
+<text x="308" y="117" class="serif" font-size="57">De horas</text><text x="308" y="187" class="serif blue" font-size="57">a minutos</text><text x="308" y="244" class="body" font-size="29" font-weight="800">Así cambió mi trabajo</text><text x="308" y="284" class="body" font-size="27" font-weight="800">en el SENA*</text>
 <rect x="44" y="386" width="632" height="387" rx="20" fill="white" stroke="#D3E5F1" stroke-width="3"/>
 <rect x="65" y="406" width="119" height="33" rx="16" fill="#DDEEFE"/><text x="83" y="430" class="label" font-size="18">NOTICIAS</text>
 <text x="64" y="487" class="serif" font-size="34">Reporte diario de noticias</text>
-<rect x="74" y="535" width="277" height="177" rx="14" fill="#F1F6FC"/><rect x="369" y="535" width="277" height="177" rx="14" fill="#E5F8F3"/>
-<text x="99" y="575" class="label">ANTES</text><text x="394" y="575" class="label">AHORA</text><text x="99" y="645" class="serif" font-size="65">≥ 2 h</text><text x="394" y="645" class="serif blue" font-size="56">≈ 15 min</text>
-<path d="M353 622h15m-7-7 7 7-7 7" class="icon"/>
-<text x="77" y="751" class="note">Selecciono las noticias, verifico y edito el borrador.</text>
+<line x1="114" y1="704" x2="607" y2="704" stroke="#BED4E4" stroke-width="3"/>
+<text x="153" y="549" class="serif" font-size="40">≥ 2 h</text><text x="430" y="660" class="serif blue" font-size="39">≈ 15 min</text>
+<rect x="183" y="564" width="65" height="140" rx="10" fill="#829DB3"/><rect x="470" y="684" width="65" height="20" rx="10" fill="#1464B0"/>
+<text x="180" y="737" class="body" font-size="22">Antes</text><text x="464" y="737" class="body blue" font-size="22">Ahora</text>
+<text x="76" y="754" class="note" font-size="20">Selecciono las noticias, verifico y edito el borrador.</text>
 <rect x="44" y="801" width="632" height="387" rx="20" fill="white" stroke="#D3E5F1" stroke-width="3"/>
 <rect x="65" y="821" width="119" height="33" rx="16" fill="#DDEEFE"/><text x="83" y="845" class="label" font-size="18">REUNIÓN</text>
 <text x="64" y="902" class="serif" font-size="34">Acta semanal de redacción</text>
-<rect x="74" y="950" width="277" height="177" rx="14" fill="#F1F6FC"/><rect x="369" y="950" width="277" height="177" rx="14" fill="#E5F8F3"/>
-<text x="99" y="990" class="label">ANTES</text><text x="394" y="990" class="label">AHORA</text><text x="99" y="1060" class="serif" font-size="65">≥ 3 h</text><text x="394" y="1060" class="serif blue" font-size="48">10–20 min</text>
-<path d="M353 1037h15m-7-7 7 7-7 7" class="icon"/>
-<text x="77" y="1166" class="note">Reviso nombres, decisiones y acuerdos del acta.</text>
+<line x1="114" y1="1119" x2="607" y2="1119" stroke="#BED4E4" stroke-width="3"/>
+<text x="153" y="964" class="serif" font-size="40">≥ 3 h</text><text x="420" y="1075" class="serif blue" font-size="37">10–20 min</text>
+<rect x="183" y="979" width="65" height="140" rx="10" fill="#829DB3"/><rect x="470" y="1099" width="65" height="20" rx="10" fill="#1464B0"/>
+<text x="180" y="1152" class="body" font-size="22">Antes</text><text x="464" y="1152" class="body blue" font-size="22">Ahora</text>
+<text x="76" y="1169" class="note" font-size="20">Reviso nombres, decisiones y acuerdos del acta.</text>
 <text x="49" y="1230" class="note" font-size="19">*Servicio Nacional de Aprendizaje, entidad pública de Colombia.</text><text x="49" y="1258" class="note" font-size="18">Tiempos aproximados según mi experiencia.</text></svg>
