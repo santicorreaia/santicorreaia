@@ -10,16 +10,16 @@
 <rect x="65" y="406" width="119" height="33" rx="16" fill="#DDEEFE"/><text x="83" y="430" class="label" font-size="18">NOTICIAS</text>
 <text x="64" y="487" class="serif" font-size="34">Reporte diario de noticias</text>
 <line x1="114" y1="704" x2="607" y2="704" stroke="#BED4E4" stroke-width="3"/>
-<text x="153" y="549" class="serif" font-size="40">≥ 2 h</text><text x="430" y="660" class="serif blue" font-size="39">≈ 15 min</text>
-<rect x="183" y="564" width="65" height="140" rx="10" fill="#829DB3"/><rect x="470" y="684" width="65" height="20" rx="10" fill="#1464B0"/>
-<text x="180" y="737" class="body" font-size="22">Antes</text><text x="464" y="737" class="body blue" font-size="22">Ahora</text>
-<text x="76" y="754" class="note" font-size="20">Selecciono las noticias, verifico y edito el borrador.</text>
+<text x="78" y="646" class="serif" font-size="31">≥ 2 horas</text><text x="494" y="646" class="serif blue" font-size="31">≈ 15 min</text>
+<rect x="280" y="564" width="62" height="140" rx="10" fill="#829DB3"/><rect x="410" y="684" width="62" height="20" rx="10" fill="#1464B0"/>
+<text x="270" y="729" class="body" font-size="21">Antes</text><text x="400" y="729" class="body blue" font-size="21">Ahora</text>
+<text x="360" y="761" text-anchor="middle" class="note" font-size="19">Selecciono las noticias, verifico y edito el borrador.</text>
 <rect x="44" y="801" width="632" height="387" rx="20" fill="white" stroke="#D3E5F1" stroke-width="3"/>
 <rect x="65" y="821" width="119" height="33" rx="16" fill="#DDEEFE"/><text x="83" y="845" class="label" font-size="18">REUNIÓN</text>
 <text x="64" y="902" class="serif" font-size="34">Acta semanal de redacción</text>
 <line x1="114" y1="1119" x2="607" y2="1119" stroke="#BED4E4" stroke-width="3"/>
-<text x="153" y="964" class="serif" font-size="40">≥ 3 h</text><text x="420" y="1075" class="serif blue" font-size="37">10–20 min</text>
-<rect x="183" y="979" width="65" height="140" rx="10" fill="#829DB3"/><rect x="470" y="1099" width="65" height="20" rx="10" fill="#1464B0"/>
-<text x="180" y="1152" class="body" font-size="22">Antes</text><text x="464" y="1152" class="body blue" font-size="22">Ahora</text>
-<text x="76" y="1169" class="note" font-size="20">Reviso nombres, decisiones y acuerdos del acta.</text>
+<text x="78" y="1061" class="serif" font-size="31">≥ 3 horas</text><text x="491" y="1061" class="serif blue" font-size="29">10–20 min</text>
+<rect x="280" y="979" width="62" height="140" rx="10" fill="#829DB3"/><rect x="410" y="1099" width="62" height="20" rx="10" fill="#1464B0"/>
+<text x="270" y="1144" class="body" font-size="21">Antes</text><text x="400" y="1144" class="body blue" font-size="21">Ahora</text>
+<text x="360" y="1176" text-anchor="middle" class="note" font-size="19">Reviso nombres, decisiones y acuerdos del acta.</text>
 <text x="49" y="1230" class="note" font-size="19">*Servicio Nacional de Aprendizaje, entidad pública de Colombia.</text><text x="49" y="1258" class="note" font-size="18">Tiempos aproximados según mi experiencia.</text></svg>
