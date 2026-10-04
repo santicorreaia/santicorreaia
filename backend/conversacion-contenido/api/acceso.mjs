@@ -3,5 +3,5 @@ export default function handler(req,res){
 res.setHeader('Cache-Control','no-store');res.setHeader('Referrer-Policy','no-referrer');
 const code=process.env.DEMO_ACCESS_CODE;const expected=code?.split('-').slice(1,3).join('');const given=req.query.t;
 if(req.method!=='GET'||!expected||typeof given!=='string'||Buffer.byteLength(given)!==Buffer.byteLength(expected)||!timingSafeEqual(Buffer.from(given),Buffer.from(expected)))return res.status(404).end('Enlace no disponible.');
-const app=req.query.app==='procesos'?'simplifica-trabajo':'conversacion-contenido';res.setHeader('Location','https://santicorreaia.github.io/santicorreaia/apps/'+app+'/'+(app==='simplifica-trabajo'?'?v=voz3':'')+'#acceso='+encodeURIComponent(code));return res.status(302).end();
+const app=req.query.app==='procesos'?'simplifica-trabajo':'conversacion-contenido';res.setHeader('Location','https://santicorreaia.github.io/santicorreaia/apps/'+app+'/'+(app==='simplifica-trabajo'?'?v=voz3-lista':'')+'#acceso='+encodeURIComponent(code));return res.status(302).end();
 }
