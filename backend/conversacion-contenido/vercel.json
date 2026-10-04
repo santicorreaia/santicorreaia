@@ -1,1 +1,1 @@
-{"functions":{"api/generate.mjs":{"maxDuration":120}}}
+{"functions": {"api/generate.mjs": {"maxDuration": 120}}, "rewrites": [{"source": "/a/:t", "destination": "/api/acceso?t=:t"}]}
